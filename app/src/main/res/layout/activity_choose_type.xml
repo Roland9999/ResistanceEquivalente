@@ -22,7 +22,8 @@
         android:text="SIMPLE"
         android:layout_marginTop="68dp"
         android:layout_below="@+id/text_view_choose_type"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:onClick="callSimpleType"/>
 
 
     <Button

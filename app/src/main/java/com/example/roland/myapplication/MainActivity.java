@@ -19,4 +19,10 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+    /**Calling activity ChooseType */
+    public void callChooseType(View view){
+        Intent intent  = new Intent(this, ChooseType.class);
+        this.startActivity(intent);
+    }
+
 }

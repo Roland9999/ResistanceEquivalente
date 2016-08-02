@@ -5,18 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class ChooseType extends AppCompatActivity {
+public class SimpleType extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_type);
-    }
-
-    /**Calling activity SimpleType */
-    public void callSimpleType(View view){
-        Intent intent  = new Intent(this, SimpleType.class);
-        this.startActivity(intent);
+        setContentView(R.layout.activity_simple_type);
     }
 
     /**Calling Home */
@@ -24,5 +18,4 @@ public class ChooseType extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
     }
-
 }
