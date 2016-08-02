@@ -60,7 +60,7 @@ public class AddAResistance extends AppCompatActivity {
         spinner5.setAdapter(adapter3);
     }
 
-    /**Calling activity AddAResistance */
+    /**Calling Home */
     public void callHome(View view){
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
