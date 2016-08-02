@@ -7,42 +7,34 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ChooseType">
+    tools:context=".SerialTypeChooseNbr">
 
     <TextView
-        android:id="@+id/text_view_choose_type"
+        android:id="@+id/text_view_serial_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select a type :" />
+        android:text="Serial type :" />
 
-    <Button
-        android:id="@+id/type_simple"
+    <TextView
+        android:id="@+id/number_resistances_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SIMPLE"
-        android:layout_marginTop="68dp"
-        android:layout_below="@+id/text_view_choose_type"
+        android:layout_below="@id/text_view_simple_type"
+        android:layout_marginTop="130dp"
         android:layout_centerHorizontal="true"
-        android:onClick="callSimpleType"/>
+        android:text="Enter the number of serial resistances :" />
 
 
-    <Button
-        android:id="@+id/serial_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SERIAL TYPE"
-        android:layout_marginTop="58dp"
-        android:layout_below="@+id/type_simple"
-        android:layout_centerHorizontal="true"
-        android:onClick="callSerialTypeChooseNbr"/>
+
+
 
     <Button
-        android:id="@+id/parallel_type"
+        android:id="@+id/validation_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PARALLEL TYPE"
-        android:layout_marginTop="58dp"
-        android:layout_below="@+id/serial_type"
+        android:text="VALIDATE"
+        android:layout_marginTop="130dp"
+        android:layout_below="@+id/number_resistances_text"
         android:layout_centerHorizontal="true"/>
 
     <Button

@@ -19,6 +19,12 @@ public class ChooseType extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+    /**Calling activity SerialTypeChooseNbr */
+    public void callSerialTypeChooseNbr(View view){
+        Intent intent  = new Intent(this, SerialTypeChooseNbr.class);
+        this.startActivity(intent);
+    }
+
     /**Calling Home */
     public void callHome(View view){
         Intent intent = new Intent(this, MainActivity.class);
