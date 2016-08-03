@@ -70,6 +70,25 @@
         android:layout_alignStart="@id/spinner2"
         android:layout_marginStart="250dp"/>
 
+    <TextView
+        android:id="@+id/resultat_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner3"
+        android:layout_marginTop="50dp"
+        android:text="The value of the resistance is : "/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/total"
+        android:background="@color/Gray"
+        android:layout_below="@id/resultat_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textSize="@dimen/textview_height"
+        android:text="The value of your equivalent resistance is : "/>
+
     <Button
         android:id="@+id/home"
         android:layout_width="wrap_content"
