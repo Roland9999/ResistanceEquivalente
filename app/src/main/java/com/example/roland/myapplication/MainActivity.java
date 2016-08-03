@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
-    /**Calling activity ChooseType */
-    public void callChooseType(View view){
-        Intent intent  = new Intent(this, ChooseType.class);
+    /**Calling activity ChooseComplexType */
+    public void callChooseComplexType(View view){
+        Intent intent  = new Intent(this, ChooseComplexType.class);
         this.startActivity(intent);
     }
 
