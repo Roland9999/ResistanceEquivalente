@@ -19,10 +19,4 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
-    /**Calling activity ChooseComplexType */
-    public void callChooseComplexType(View view){
-        Intent intent  = new Intent(this, ChooseComplexType.class);
-        this.startActivity(intent);
-    }
-
 }
