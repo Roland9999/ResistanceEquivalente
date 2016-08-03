@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/spinner3"
         android:layout_marginTop="50dp"
-        android:text="The value of your equivalente resistance is :"/>
+        android:text="The value of your equivalent resistance is :"/>
 
     <Button
         android:id="@+id/home"
