@@ -16,22 +16,22 @@
         android:text="Select a task :" />
 
     <Button
-        android:id="@+id/add_res"
+        android:id="@+id/res_val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ADD RESISTANCE"
-        android:layout_marginTop="78dp"
+        android:text="RESISTANCE VALUE"
+        android:layout_marginTop="110dp"
         android:layout_below="@+id/main_text_view"
         android:layout_centerHorizontal="true"
         android:onClick="callAddAResistance"/>
     <Button
-        android:id="@+id/calculequivres"
+        android:id="@+id/complex_circuit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculate equivalent resistance"
-        android:layout_marginTop="78dp"
-        android:layout_below="@+id/add_res"
+        android:text="COMPLEX CIRCUIT"
+        android:layout_marginTop="90dp"
+        android:layout_below="@+id/res_val"
         android:layout_centerHorizontal="true"
-        android:onClick="callChooseType"/>
+        android:onClick="callChooseComplexType"/>
 
 </RelativeLayout>

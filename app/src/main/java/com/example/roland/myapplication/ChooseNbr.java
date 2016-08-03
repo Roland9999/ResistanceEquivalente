@@ -5,12 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class SerialTypeChooseNbr extends AppCompatActivity {
+public class ChooseNbr extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_serial_type);
+        setContentView(R.layout.activity_choose_nbr);
     }
 
     /**Calling Home */

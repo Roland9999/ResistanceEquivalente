@@ -5,25 +5,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class ChooseType extends AppCompatActivity {
+public class ChooseComplexType extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_type);
+        setContentView(R.layout.activity_choose_complex_type);
     }
 
-    /**Calling activity SimpleType */
-    public void callSimpleType(View view){
-        Intent intent  = new Intent(this, SimpleType.class);
+    /**Calling activity ChooseNbr */
+    public void callChooseNbr(View view){
+        Intent intent  = new Intent(this, ChooseNbr.class);
         this.startActivity(intent);
     }
 
-    /**Calling activity SerialTypeChooseNbr */
-    public void callSerialTypeChooseNbr(View view){
-        Intent intent  = new Intent(this, SerialTypeChooseNbr.class);
-        this.startActivity(intent);
-    }
 
     /**Calling Home */
     public void callHome(View view){
