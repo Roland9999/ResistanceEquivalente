@@ -49,9 +49,12 @@ public class Resistance {
     }
 
     public double computeValue(int nbAnneaux, double[] tabDouble){
-        return  valResistance = ((tabDouble[0]*Math.pow(10.0,(nbAnneaux-1)))+
-                (tabDouble[1]*Math.pow(10.0,(nbAnneaux-2)))+
-                (tabDouble[3]*10*(nbAnneaux-3)))*Math.pow(10.0,tabDouble[2]);
+        int soustracteur = 2;
+        if (nbAnneaux == 5) soustracteur = 3;
+        if (nbAnneaux == 6) soustracteur = 4;
+        return  valResistance = ((tabDouble[0]*Math.pow(10.0,(nbAnneaux-soustracteur)))+
+                (tabDouble[1]*Math.pow(10.0,(nbAnneaux-(soustracteur + 1))))+
+                (tabDouble[3]*10*(nbAnneaux-(soustracteur + 2))))*Math.pow(10.0,tabDouble[2]);
     }
 
     public int getNbAnneaux() {
