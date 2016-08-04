@@ -1,29 +1,35 @@
 package com.example.roland.myapplication;
 
-import android.graphics.Color;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Roland on 02/08/2016.
  */
 public class ColorsValue {
 
-    private Map<Integer, Double> colorsValues;
 
-    public ColorsValue(){
+    public static Map<String, Integer> getColorsValue(){
+        Map<String, Integer> colorsValues;
         colorsValues = new HashMap<>();
-        colorsValues.put(Color.BLACK, 0.0);
-        //colorsValues.put(Color.BROWN, 1.0);
-        colorsValues.put(Color.RED, 2.0);
-        //colorsValues.put(Color.ORANGE, 3.0);
-        colorsValues.put(Color.YELLOW, 4.0);
-        colorsValues.put(Color.GREEN, 5.0);
-        colorsValues.put(Color.BLUE, 6.0);
-        //colorsValues.put(Color.VIOLET, 7.0);
-        colorsValues.put(Color.GRAY, 8.0);
-        colorsValues.put(Color.WHITE, 9.0);
+        colorsValues.put("#000000", 0);
+        colorsValues.put("#582900", 1);
+        colorsValues.put("#FF0000", 2);
+        colorsValues.put("#ED7F10", 3);
+        colorsValues.put("#FFFF00", 4);
+        colorsValues.put("#096A09", 5);
+        colorsValues.put("#0000FF", 6);
+        colorsValues.put("#660099", 7);
+        colorsValues.put("#606060", 8);
+        colorsValues.put("#FFFFFF", 9);
+        //colorsValues.put("#FFD700", 10);
+        //colorsValues.put("#CECECE", 11);
+
+        return colorsValues;
     }
 /*
     <item name="Black">#000000</item>
@@ -40,11 +46,12 @@ public class ColorsValue {
     <item name="Silver">#CECECE</item>
 */
 
-    public Map<Integer, Double> getColorsValues() {
-        return colorsValues;
+    public static List<String> ringsColors(){
+        //List<String> myColors = new ArrayList<>();
+        Set myColors = getColorsValue().keySet(); //retourne la liste des clés du Map
+        List listOfMyColors = new ArrayList( myColors ); //conversion du Set en List
+        return listOfMyColors;
     }
 
-    public void setColorsValues(Map<Integer, Double> colorsValues) {
-        this.colorsValues = colorsValues;
-    }
+
 }
