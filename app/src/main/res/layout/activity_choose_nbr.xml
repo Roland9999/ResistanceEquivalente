@@ -25,7 +25,21 @@
         android:text="Enter the number of resistances :" />
 
 
-
+    <EditText
+        android:id="@+id/enter_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/number_resistances_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textIsSelectable="true"
+        android:hint="nbr?"
+        android:digits="true"
+        android:inputType="number"
+        android:background="@color/Gray" />
+       
 
 
     <Button
