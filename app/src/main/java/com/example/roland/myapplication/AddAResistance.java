@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
+
+import java.util.Map;
 
 public class AddAResistance extends AppCompatActivity {
 
@@ -44,13 +45,24 @@ public class AddAResistance extends AppCompatActivity {
         total.setText(String.valueOf(nbAnneaux));
         Resistance.setNbAnneaux(nbAnneaux);
         */
-        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+        final Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
         // Create an ArrayAdapter using the string array and a default spinner layout
         CostomSpinnerAdapter adapter2 = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
         // Specify the layout to use when the list of choices appears
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner2.setAdapter(adapter2);
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Resistance.setVal((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Resistance.setVal(0.0);
+            }
+        });
 
         Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -59,6 +71,17 @@ public class AddAResistance extends AppCompatActivity {
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner3.setAdapter(adapter3);
+        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Resistance.setVal2((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Resistance.setVal2(0.0);
+            }
+        });
 
         Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -67,6 +90,17 @@ public class AddAResistance extends AppCompatActivity {
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner4.setAdapter(adapter4);
+        spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Resistance.setVal3((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Resistance.setVal3(0.0);
+            }
+        });
 
         Spinner spinner5 = (Spinner) findViewById(R.id.spinner5);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -75,6 +109,17 @@ public class AddAResistance extends AppCompatActivity {
         adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner5.setAdapter(adapter5);
+        spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Resistance.setVal4((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Resistance.setVal4(0.0);
+            }
+        });
 
         Spinner spinner6 = (Spinner) findViewById(R.id.spinner6);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -85,6 +130,17 @@ public class AddAResistance extends AppCompatActivity {
         adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner6.setAdapter(adapter6);
+        spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Resistance.setVal5((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Resistance.setVal5(0.0);
+            }
+        });
 
         Spinner spinner7 = (Spinner) findViewById(R.id.spinner7);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -95,6 +151,17 @@ public class AddAResistance extends AppCompatActivity {
         adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner7.setAdapter(adapter7);
+        spinner7.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Resistance.setVal6((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Resistance.setVal6(0.0);
+            }
+        });
     }
 
     /**Calling Home */
@@ -103,7 +170,7 @@ public class AddAResistance extends AppCompatActivity {
         this.startActivity(intent);
     }
 
-    /**setting nomber of ring of a resistanc*/
+    /**setting nomber of ring of a resistance*/
     public void nbRings(Spinner spinner){
         int spinner_pos = spinner.getSelectedItemPosition();
         String[] ringsNb = getResources().getStringArray(R.array.nb);
@@ -111,4 +178,10 @@ public class AddAResistance extends AppCompatActivity {
         Resistance.setNbAnneaux(nbAnneaux);
     }
 
+    /**setting value of variable val*/
+/*    public void setVal(String color){
+        Map<String, Integer> colorsValues = ColorsValue.getColorsValue();
+        Resistance.setVal((double) colorsValues.get(color));
+    }
+*/
 }
