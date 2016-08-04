@@ -39,7 +39,7 @@
         android:digits="true"
         android:inputType="number"
         android:background="@color/Gray" />
-       
+
 
 
     <Button

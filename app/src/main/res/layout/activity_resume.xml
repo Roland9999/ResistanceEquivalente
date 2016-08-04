@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.roland.myapplication.Resume">
 
-    
+
 
 
     <Button
@@ -17,8 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MODIFICATION"
-        android:layout_above="@id/home"
-        android:layout_marginBottom="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="40dp"
         />
@@ -30,10 +30,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="VALIDATE"
-        android:layout_above="@id/home"
-        android:layout_marginBottom="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="55dp"
+        android:layout_marginRight="60dp"
         android:onClick="callResultPage"/>
 
 
