@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class AddAResistance extends AppCompatActivity {
 
@@ -19,10 +21,29 @@ public class AddAResistance extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.nb, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
+        //int val = Integer.parseInt(spinner.getSelectedItem().toString()); //to get the entry
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+        //appel d'une classe abstraite entraîne les deux fonctions ci-dessous
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                nbRings((Spinner) parent);
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Resistance.setNbAnneaux(3);
+            }
+        });
+
+        nbRings(spinner);
+        /*
+        TextView total = (TextView)findViewById(R.id.total);
+        total.setText(String.valueOf(nbAnneaux));
+        Resistance.setNbAnneaux(nbAnneaux);
+        */
         Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
         // Create an ArrayAdapter using the string array and a default spinner layout
         CostomSpinnerAdapter adapter2 = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
@@ -82,6 +103,12 @@ public class AddAResistance extends AppCompatActivity {
         this.startActivity(intent);
     }
 
-
+    /**setting nomber of ring of a resistanc*/
+    public void nbRings(Spinner spinner){
+        int spinner_pos = spinner.getSelectedItemPosition();
+        String[] ringsNb = getResources().getStringArray(R.array.nb);
+        int nbAnneaux = Integer.valueOf(ringsNb[spinner_pos]);
+        Resistance.setNbAnneaux(nbAnneaux);
+    }
 
 }
