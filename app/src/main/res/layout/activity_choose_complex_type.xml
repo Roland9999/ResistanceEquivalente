@@ -13,13 +13,13 @@
         android:id="@+id/text_view_choose_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select a type :" />
+        android:text="Select a circuit :" />
 
     <Button
         android:id="@+id/serial_type_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SERIAL TYPE"
+        android:text="SERIAL CIRCUIT"
         android:layout_marginTop="58dp"
         android:layout_centerHorizontal="true"
         android:onClick="callChooseNbr"/>
@@ -28,7 +28,7 @@
         android:id="@+id/parallel_type_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PARALLEL TYPE"
+        android:text="PARALLEL CIRCUIT"
         android:layout_marginTop="58dp"
         android:layout_below="@+id/serial_type_button"
         android:layout_centerHorizontal="true"
@@ -38,7 +38,7 @@
         android:id="@+id/mixte_type_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MIXTE TYPE"
+        android:text="MIXTE CIRCUIT"
         android:layout_marginTop="68dp"
         android:layout_below="@+id/parallel_type_button"
         android:layout_centerHorizontal="true"

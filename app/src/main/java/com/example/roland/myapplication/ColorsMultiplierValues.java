@@ -1,6 +1,5 @@
 package com.example.roland.myapplication;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,12 +7,11 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by Roland on 02/08/2016.
+ * Created by Roland on 03/08/2016.
  */
-public class ColorsValue {
+public class ColorsMultiplierValues {
 
-
-    public static Map<String, Integer> getColorsValue(){
+    public static Map<String, Integer> getMultiplierColorsValue(){
         Map<String, Integer> colorsValues;
         colorsValues = new HashMap<>();
         colorsValues.put("#000000", 0);
@@ -26,8 +24,8 @@ public class ColorsValue {
         colorsValues.put("#660099", 7);
         colorsValues.put("#606060", 8);
         colorsValues.put("#FFFFFF", 9);
-        //colorsValues.put("#FFD700", 10);
-        //colorsValues.put("#CECECE", 11);
+        colorsValues.put("#FFD700", -2);
+        colorsValues.put("#CECECE", -1);
 
         return colorsValues;
     }
@@ -46,12 +44,11 @@ public class ColorsValue {
     <item name="Silver">#CECECE</item>
 */
 
-    public static List<String> ringsColors(){
+    public static List<String> ringsMultiplierColors(){
         //List<String> myColors = new ArrayList<>();
-        Set myColors = getColorsValue().keySet(); //retourne la liste des clés du Map
+        Set myColors = getMultiplierColorsValue().keySet(); //retourne la liste des clés du Map
         List listOfMyColors = new ArrayList( myColors ); //conversion du Set en List
         return listOfMyColors;
     }
-
 
 }

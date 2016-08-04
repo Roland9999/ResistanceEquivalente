@@ -25,8 +25,7 @@ public class AddAResistance extends AppCompatActivity {
 
         Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
-                R.array.colors, android.R.layout.simple_spinner_item);
+        CostomSpinnerAdapter adapter2 = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
         // Specify the layout to use when the list of choices appears
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -34,8 +33,7 @@ public class AddAResistance extends AppCompatActivity {
 
         Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
-                R.array.colors, android.R.layout.simple_spinner_item);
+        CostomSpinnerAdapter adapter3 = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
         // Specify the layout to use when the list of choices appears
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -43,8 +41,7 @@ public class AddAResistance extends AppCompatActivity {
 
         Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(this,
-                R.array.colors, android.R.layout.simple_spinner_item);
+        CostomSpinnerAdapter adapter4 = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
         // Specify the layout to use when the list of choices appears
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -52,12 +49,31 @@ public class AddAResistance extends AppCompatActivity {
 
         Spinner spinner5 = (Spinner) findViewById(R.id.spinner5);
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(this,
-                R.array.colors, android.R.layout.simple_spinner_item);
+        CostomSpinnerAdapter adapter5 = new CostomSpinnerAdapter(this, ColorsMultiplierValues.ringsMultiplierColors());
         // Specify the layout to use when the list of choices appears
         adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
-        spinner5.setAdapter(adapter3);
+        spinner5.setAdapter(adapter5);
+
+        Spinner spinner6 = (Spinner) findViewById(R.id.spinner6);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        /*ArrayAdapter<CharSequence> adapter6 = ArrayAdapter.createFromResource(this,
+                R.array.colors, android.R.layout.simple_spinner_item);*/
+        CostomSpinnerAdapter adapter6 = new CostomSpinnerAdapter(this, ColorsToleranceValues.ringsToleranceColors());
+        // Specify the layout to use when the list of choices appears
+        adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner6.setAdapter(adapter6);
+
+        Spinner spinner7 = (Spinner) findViewById(R.id.spinner7);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        /*ArrayAdapter<CharSequence> adapter7 = ArrayAdapter.createFromResource(this,
+                R.array.colors, android.R.layout.simple_spinner_item);*/
+        CostomSpinnerAdapter adapter7 = new CostomSpinnerAdapter(this, ColorsTemperatureCoefficientValues.ringsTemperatureCoefficientColors());
+        // Specify the layout to use when the list of choices appears
+        adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner7.setAdapter(adapter7);
     }
 
     /**Calling Home */
