@@ -9,7 +9,7 @@ public class Resistance {
     private static int nbAnneaux;
     private double[] tabDouble = {0.0,0.0,1.0,0.0,20.0,0.0};
     private double valResistance;
-    private static double val, val2, val3, val4, val5;
+    private static double val, val2, val3, val4, val5, val6;
 
     public Resistance(double val, double val2, double val3){
         tabDouble[0] = val;
@@ -120,5 +120,13 @@ public class Resistance {
 
     public static void setVal5(double val5) {
         Resistance.val5 = val5;
+    }
+
+    public static double getVal6() {
+        return val6;
+    }
+
+    public static void setVal6(double val6) {
+        Resistance.val6 = val6;
     }
 }
