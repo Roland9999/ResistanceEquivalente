@@ -37,7 +37,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".CostomSpinnerAdapter" />
-        <activity android:name=".CustomSpinnerMultiplierAdapter"></activity>
     </application>
 
 </manifest>
