@@ -13,6 +13,12 @@ public class Resume extends AppCompatActivity {
         setContentView(R.layout.activity_resume);
     }
 
+    /**Calling activity AddAResistance */
+    public void callResultPage(View view){
+        Intent intent  = new Intent(this, Result.class);
+        this.startActivity(intent);
+    }
+
     public void callHome(View view){
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
