@@ -100,7 +100,7 @@
         android:layout_below="@id/resultat_text"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:textSize="@dimen/textview_height"
+        android:textSize="25sp"
         android:text="The value of your equivalent resistance is : "/>
 
     <Button
