@@ -6,7 +6,7 @@ package com.example.roland.myapplication;
  */
 public class Resistance {
 
-    private int nbAnneaux;
+    private static int nbAnneaux;
     private double[] tabDouble = {0.0,0.0,1.0,0.0,20.0,0.0};
     private double valResistance;
 
@@ -57,12 +57,12 @@ public class Resistance {
                 (tabDouble[3]*10*(nbAnneaux-(soustracteur + 2))))*Math.pow(10.0,tabDouble[2]);
     }
 
-    public int getNbAnneaux() {
+    public static int getNbAnneaux() {
         return nbAnneaux;
     }
 
-    public void setNbAnneaux(int nbAnneaux) {
-        this.nbAnneaux = nbAnneaux;
+    public static void setNbAnneaux(int nbAnneaux) {
+        Resistance.nbAnneaux = nbAnneaux;
     }
 
     public double[] getTabDouble() {

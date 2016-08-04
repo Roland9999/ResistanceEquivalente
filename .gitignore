@@ -1,4 +1,3 @@
-**.iml
 .gradle
 /local.properties
 .idea
@@ -6,3 +5,5 @@ target/**
 .DS_Store
 /build
 /captures
+app/libs/
+app/src/main/res/drawable/
