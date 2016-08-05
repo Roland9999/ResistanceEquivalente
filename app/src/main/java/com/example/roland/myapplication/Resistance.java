@@ -49,7 +49,7 @@ public class Resistance {
         valResistance = computeValue(nbAnneaux, tabDouble);
     }
 
-    public double computeValue(int nbAnneaux, double[] tabDouble){
+    public static double computeValue(int nbAnneaux, double[] tabDouble){
         int soustracteur = 2;
         if (nbAnneaux == 5) soustracteur = 3;
         if (nbAnneaux == 6) soustracteur = 4;
