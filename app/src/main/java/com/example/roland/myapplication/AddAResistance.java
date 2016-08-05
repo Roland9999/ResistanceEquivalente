@@ -136,19 +136,19 @@ public class AddAResistance extends AppCompatActivity {
 
     /**evaluating value of a resistance with 4 rings*/
     public double evaluationResVal4Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), 0.0);
+        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
 
     /**evaluating value of a resistance with 5 rings*/
     public double evaluationResVal5Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4(), Resistance.getVal5());
+        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
 
     /**evaluating value of a resistance with 6 rings*/
     public double evaluationResVal6Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4(), Resistance.getVal5(), Resistance.getVal6());
+        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
 
@@ -160,7 +160,7 @@ public class AddAResistance extends AppCompatActivity {
         if (nbAnneaux == 6) soustracteur = 4;
         return  ((tabDouble[0]*Math.pow(10.0,(nbAnneaux-soustracteur)))+
                 (tabDouble[1]*Math.pow(10.0,(nbAnneaux-(soustracteur + 1))))+
-                (tabDouble[3]*10*(nbAnneaux-(soustracteur + 2))))*Math.pow(10.0,tabDouble[2]);
+                (tabDouble[3]*Math.pow(10.0,(nbAnneaux-(soustracteur + 2)))))*Math.pow(10.0,tabDouble[2]);
     }
 
     /**
@@ -286,9 +286,9 @@ public class AddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal6((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
-                double value = evaluationResVal6Rings();
+                /*double value = evaluationResVal6Rings();
                 TextView total = (TextView)findViewById(R.id.total);
-                total.setText(String.valueOf(value));
+                //total.setText(String.valueOf(value));*/
             }
 
             @Override
