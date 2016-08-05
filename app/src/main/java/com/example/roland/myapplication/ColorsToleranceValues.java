@@ -14,15 +14,20 @@ public class ColorsToleranceValues {
     public static Map<String, Double> getToleranceColorsValue(){
         Map<String, Double> colorsValues;
         colorsValues = new HashMap<>();
-        colorsValues.put("#582900", 1.0);
-        colorsValues.put("#FF0000", 2.0);
-        colorsValues.put("#096A09", 0.5);
-        colorsValues.put("#0000FF", 0.25);
-        colorsValues.put("#660099", 0.1);
-        colorsValues.put("#606060", 0.05);
-        colorsValues.put("#FFFFFF", 20.0);
-        colorsValues.put("#FFD700", 5.0);
-        colorsValues.put("#CECECE", 10.0);
+        colorsValues.put("#FFFFFF", 20.0); //white
+        colorsValues.put("#CECECE", 10.0); //silver
+        colorsValues.put("#FFD700", 5.0); //gold
+        colorsValues.put("#FF0000", 2.0); //red
+        colorsValues.put("#582900", 1.0); //brown
+        colorsValues.put("#096A09", 0.5); //green
+        colorsValues.put("#0000FF", 0.25); //blue
+        colorsValues.put("#660099", 0.1); //violet
+        colorsValues.put("#606060", 0.05); //gray
+
+
+
+
+
 
         return colorsValues;
     }

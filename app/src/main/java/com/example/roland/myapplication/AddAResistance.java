@@ -37,7 +37,7 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner2);
                         Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner3);
-                        Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
+                        Spinner spinner4 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 3 à l'affichage prend 10couleurs devrais en prendre 12.
                         takingSpinnerValueRes3Rings_2(spinner4);
                         break;
                     case 4: //for resitance with 4 rings
@@ -45,7 +45,7 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner22);
                         Spinner spinner33 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner33);
-                        Spinner spinner44 = (Spinner) findViewById(R.id.spinner4);
+                        Spinner spinner44 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 3 à l'affichage prend 10couleurs devrais en prendre 12.
                         takingSpinnerValueRes3Rings_2(spinner44);
                         Spinner spinner5 = (Spinner) findViewById(R.id.spinner6);
                         takingSpinnerValueRes4Rings(spinner5);
@@ -55,11 +55,11 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner222);
                         Spinner spinner333 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner333);
-                        Spinner spinner444 = (Spinner) findViewById(R.id.spinner5);
+                        Spinner spinner444 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 3 à l'affichage prend 12couleurs
                         takingSpinnerValueRes3Rings_2(spinner444);
-                        Spinner spinner55 = (Spinner) findViewById(R.id.spinner4);
+                        Spinner spinner55 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 4 à l'affichage prend 10couleurs
                         takingSpinnerValueRes4Rings(spinner55);
-                        Spinner spinner6 = (Spinner) findViewById(R.id.spinner6);
+                        Spinner spinner6 = (Spinner) findViewById(R.id.spinner6); //l'anneau 5 prend lui bien 9couleurs.
                         takingSpinnerValueRes5Rings(spinner6);
                         break;
                     case 6: //for resitance with 6 rings
@@ -67,9 +67,9 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner2222);
                         Spinner spinner3333 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner3333);
-                        Spinner spinner4444 = (Spinner) findViewById(R.id.spinner5);
+                        Spinner spinner4444 = (Spinner) findViewById(R.id.spinner5);//problème lors du test, l'anneau 3 à l'affichage prend 12couleurs
                         takingSpinnerValueRes3Rings_2(spinner4444);
-                        Spinner spinner555 = (Spinner) findViewById(R.id.spinner4);
+                        Spinner spinner555 = (Spinner) findViewById(R.id.spinner4);//problème lors du test, l'anneau 4 à l'affichage prend 10couleurs
                         takingSpinnerValueRes4Rings(spinner555);
                         Spinner spinner66 = (Spinner) findViewById(R.id.spinner6);
                         takingSpinnerValueRes5Rings(spinner66);
