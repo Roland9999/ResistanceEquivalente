@@ -16,10 +16,10 @@ public class ChooseNbr extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_nbr);
     }
-
+/*
     EditText editText = (EditText) findViewById(R.id.enter_number);
     String nbrResistance = editText.getText().toString();
-
+*/
     /**Calling Home */
     public void callHome(View view){
         Intent intent = new Intent(this, MainActivity.class);
