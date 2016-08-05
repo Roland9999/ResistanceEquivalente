@@ -7,8 +7,8 @@ package com.example.roland.myapplication;
 public class Resistance {
 
     private static int nbAnneaux;
-    private double[] tabDouble = {0.0,0.0,1.0,0.0,20.0,0.0};
-    private double valResistance;
+    private static double[] tabDouble = {0.0,0.0,1.0,0.0,20.0,0.0};
+    private static double valResistance;
     private static double val, val2, val3, val4, val5, val6;
 
     public Resistance(double val, double val2, double val3){
@@ -66,20 +66,20 @@ public class Resistance {
         Resistance.nbAnneaux = nbAnneaux;
     }
 
-    public double[] getTabDouble() {
+    public static double[] getTabDouble() {
         return tabDouble;
     }
 
-    public void setTabDouble(double[] tabDouble) {
-        this.tabDouble = tabDouble;
+    public static void setTabDouble(double[] tabDouble) {
+        Resistance.tabDouble = tabDouble;
     }
 
-    public double getValResistance() {
+    public static double getValResistance() {
         return valResistance;
     }
 
-    public void setValResistance(double valResistance) {
-        this.valResistance = valResistance;
+    public static void setValResistance(double valResistance) {
+        Resistance.valResistance = valResistance;
     }
 
     public static double getVal() {
