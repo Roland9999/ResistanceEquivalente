@@ -37,27 +37,27 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner2);
                         Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner3);
-                        Spinner spinner4 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 3 à l'affichage prend 10couleurs devrais en prendre 12.
-                        takingSpinnerValueRes3Rings_2(spinner4);
+                        Spinner spinner4 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 3 à l'affichage prend 10couleurs devrais en prendre 12.
+                        takingSpinnerValueRes4Rings(spinner4);
                         break;
                     case 4: //for resitance with 4 rings
                         Spinner spinner22 = (Spinner) findViewById(R.id.spinner2);
                         takingSpinnerValueRes3Rings(spinner22);
                         Spinner spinner33 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner33);
-                        Spinner spinner44 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 3 à l'affichage prend 10couleurs devrais en prendre 12.
-                        takingSpinnerValueRes3Rings_2(spinner44);
+                        Spinner spinner44 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 3 à l'affichage prend 10couleurs devrais en prendre 12.
+                        takingSpinnerValueRes4Rings(spinner44);
                         Spinner spinner5 = (Spinner) findViewById(R.id.spinner6);
-                        takingSpinnerValueRes4Rings(spinner5);
+                        takingSpinnerValueRes5Rings(spinner5);
                         break;
                     case 5: //for resitance with 5 rings
                         Spinner spinner222 = (Spinner) findViewById(R.id.spinner2);
                         takingSpinnerValueRes3Rings(spinner222);
                         Spinner spinner333 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner333);
-                        Spinner spinner444 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 3 à l'affichage prend 12couleurs
+                        Spinner spinner444 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 3 à l'affichage prend 12couleurs
                         takingSpinnerValueRes3Rings_2(spinner444);
-                        Spinner spinner55 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 4 à l'affichage prend 10couleurs
+                        Spinner spinner55 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 4 à l'affichage prend 10couleurs
                         takingSpinnerValueRes4Rings(spinner55);
                         Spinner spinner6 = (Spinner) findViewById(R.id.spinner6); //l'anneau 5 prend lui bien 9couleurs.
                         takingSpinnerValueRes5Rings(spinner6);
@@ -67,9 +67,9 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner2222);
                         Spinner spinner3333 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner3333);
-                        Spinner spinner4444 = (Spinner) findViewById(R.id.spinner5);//problème lors du test, l'anneau 3 à l'affichage prend 12couleurs
+                        Spinner spinner4444 = (Spinner) findViewById(R.id.spinner4);//problème lors du test, l'anneau 3 à l'affichage prend 12couleurs
                         takingSpinnerValueRes3Rings_2(spinner4444);
-                        Spinner spinner555 = (Spinner) findViewById(R.id.spinner4);//problème lors du test, l'anneau 4 à l'affichage prend 10couleurs
+                        Spinner spinner555 = (Spinner) findViewById(R.id.spinner5);//problème lors du test, l'anneau 4 à l'affichage prend 10couleurs
                         takingSpinnerValueRes4Rings(spinner555);
                         Spinner spinner66 = (Spinner) findViewById(R.id.spinner6);
                         takingSpinnerValueRes5Rings(spinner66);
@@ -130,25 +130,25 @@ public class AddAResistance extends AppCompatActivity {
 
     /**evaluating value of a resistance with 3 rings*/
     public double evaluationResVal3Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3());
+        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
 
     /**evaluating value of a resistance with 4 rings*/
     public double evaluationResVal4Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3());
+        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
 
     /**evaluating value of a resistance with 5 rings*/
     public double evaluationResVal5Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
+        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal4(), Resistance.getVal3());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
 
     /**evaluating value of a resistance with 6 rings*/
     public double evaluationResVal6Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
+        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal4(), Resistance.getVal3());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
 
@@ -241,7 +241,7 @@ public class AddAResistance extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal4((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
+                Resistance.setVal4((double) ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
                 double value = evaluationResVal4Rings();
                 TextView total = (TextView)findViewById(R.id.total);
                 total.setText(String.valueOf(value));
@@ -263,7 +263,7 @@ public class AddAResistance extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal5((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
+                Resistance.setVal5((double) ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
                 double value = evaluationResVal5Rings();
                 TextView total = (TextView)findViewById(R.id.total);
                 total.setText(String.valueOf(value));
@@ -277,7 +277,7 @@ public class AddAResistance extends AppCompatActivity {
     }
 
     public void takingSpinnerValueRes6Rings(Spinner spinner){
-        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsToleranceValues.ringsToleranceColors());
+        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsTemperatureCoefficientValues.ringsTemperatureCoefficientColors());
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -285,10 +285,10 @@ public class AddAResistance extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal6((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
-                /*double value = evaluationResVal6Rings();
+                Resistance.setVal6((double) ColorsTemperatureCoefficientValues.getTemperatureCoefficientColorsValue().get(parent.getSelectedItem().toString()));
+                double value = evaluationResVal6Rings();
                 TextView total = (TextView)findViewById(R.id.total);
-                //total.setText(String.valueOf(value));*/
+                total.setText(String.valueOf(value));
             }
 
             @Override

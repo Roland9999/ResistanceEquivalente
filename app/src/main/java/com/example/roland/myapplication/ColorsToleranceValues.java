@@ -24,11 +24,6 @@ public class ColorsToleranceValues {
         colorsValues.put("#660099", 0.1); //violet
         colorsValues.put("#606060", 0.05); //gray
 
-
-
-
-
-
         return colorsValues;
     }
 
