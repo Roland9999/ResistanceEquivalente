@@ -37,14 +37,6 @@
         android:textAlignment="center"
         android:inputType="number"/>
 
-    <!--android:digits="true"-->
-    <!--android:onClick="enterNbr"-->
-   <!-- android:ems="3"-->
-    <!--android:hint="nbr?"-->
-    <!--android:textIsSelectable="true"-->
-    <!---->
-    <!---->
-
 
     <Button
         android:id="@+id/validation_button"

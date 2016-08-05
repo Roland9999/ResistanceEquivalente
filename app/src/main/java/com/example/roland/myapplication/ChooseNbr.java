@@ -24,11 +24,6 @@ public class ChooseNbr extends AppCompatActivity {
 
     }
 
-   /* public void enterNbr(View view){
-        //Intent editTextNbr = new Intent (android.inputmethodservice.ExtractEditText);
-
-    }*/
-
 
 
     /**Calling Home */
