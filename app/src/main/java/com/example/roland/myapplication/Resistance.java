@@ -7,8 +7,8 @@ package com.example.roland.myapplication;
 public class Resistance {
 
     private static int nbAnneaux;
-    private static double[] tabDouble = {0.0,0.0,1.0,0.0,20.0,0.0};
-    private static double valResistance;
+    private double[] tabDouble = {0.0,0.0,1.0,0.0,20.0,0.0};
+    private double valResistance;
     private static double val, val2, val3, val4, val5, val6;
 
     public Resistance(double val, double val2, double val3){
@@ -16,7 +16,7 @@ public class Resistance {
         tabDouble[1] = val2;
         tabDouble[2] = val3;
 
-        valResistance = computeValue(nbAnneaux, tabDouble);
+        //valResistance = computeValue(nbAnneaux, tabDouble);
     }
 
     public Resistance(double val, double val2, double val3, double val4){
@@ -25,7 +25,7 @@ public class Resistance {
         tabDouble[2] = val4;
         tabDouble[3] = val3;
 
-        valResistance = computeValue(nbAnneaux, tabDouble);
+        //valResistance = computeValue(nbAnneaux, tabDouble);
     }
 
     public Resistance(double val, double val2, double val3, double val4, double val5){
@@ -35,7 +35,7 @@ public class Resistance {
         tabDouble[3] = val3;
         tabDouble[4] = val5;
 
-        valResistance = computeValue(nbAnneaux, tabDouble);
+        //valResistance = computeValue(nbAnneaux, tabDouble);
     }
 
     public Resistance(double val, double val2, double val3, double val4, double val5, double val6){
@@ -46,17 +46,9 @@ public class Resistance {
         tabDouble[4] = val5;
         tabDouble[5] = val6;
 
-        valResistance = computeValue(nbAnneaux, tabDouble);
+        //valResistance = computeValue(nbAnneaux, tabDouble);
     }
 
-    public static double computeValue(int nbAnneaux, double[] tabDouble){
-        int soustracteur = 2;
-        if (nbAnneaux == 5) soustracteur = 3;
-        if (nbAnneaux == 6) soustracteur = 4;
-        return  valResistance = ((tabDouble[0]*Math.pow(10.0,(nbAnneaux-soustracteur)))+
-                (tabDouble[1]*Math.pow(10.0,(nbAnneaux-(soustracteur + 1))))+
-                (tabDouble[3]*10*(nbAnneaux-(soustracteur + 2))))*Math.pow(10.0,tabDouble[2]);
-    }
 
     public static int getNbAnneaux() {
         return nbAnneaux;
@@ -66,20 +58,20 @@ public class Resistance {
         Resistance.nbAnneaux = nbAnneaux;
     }
 
-    public static double[] getTabDouble() {
+    public double[] getTabDouble() {
         return tabDouble;
     }
 
-    public static void setTabDouble(double[] tabDouble) {
-        Resistance.tabDouble = tabDouble;
+    public void setTabDouble(double[] tabDouble) {
+        this.tabDouble = tabDouble;
     }
 
-    public static double getValResistance() {
+    public double getValResistance() {
         return valResistance;
     }
 
-    public static void setValResistance(double valResistance) {
-        Resistance.valResistance = valResistance;
+    public void setValResistance(double valResistance) {
+        this.valResistance = valResistance;
     }
 
     public static double getVal() {
