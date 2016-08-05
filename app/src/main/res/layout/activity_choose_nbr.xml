@@ -32,14 +32,18 @@
         android:layout_below="@id/number_resistances_text"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:textAlignment="center"
         android:textSize="25sp"
-        android:textIsSelectable="true"
-        android:hint="nbr?"
-        android:digits="true"
-        android:inputType="number"
-        android:background="@color/Gray" />
+        android:background="@color/Gray"
+        android:textAlignment="center"
+        android:inputType="number"/>
 
+    <!--android:digits="true"-->
+    <!--android:onClick="enterNbr"-->
+   <!-- android:ems="3"-->
+    <!--android:hint="nbr?"-->
+    <!--android:textIsSelectable="true"-->
+    <!---->
+    <!---->
 
 
     <Button
@@ -49,7 +53,9 @@
         android:text="VALIDATE"
         android:layout_marginTop="130dp"
         android:layout_below="@+id/number_resistances_text"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:onClick="onValidate"
+        />
 
     <Button
         android:id="@+id/home"
