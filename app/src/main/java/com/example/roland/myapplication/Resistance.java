@@ -22,8 +22,8 @@ public class Resistance {
     public Resistance(double val, double val2, double val3, double val4){
         tabDouble[0] = val;
         tabDouble[1] = val2;
-        tabDouble[2] = val4;
-        tabDouble[3] = val3;
+        tabDouble[2] = val3;
+        tabDouble[3] = val4;
 
         //valResistance = computeValue(nbAnneaux, tabDouble);
     }
@@ -31,8 +31,8 @@ public class Resistance {
     public Resistance(double val, double val2, double val3, double val4, double val5){
         tabDouble[0] = val;
         tabDouble[1] = val2;
-        tabDouble[2] = val4;
-        tabDouble[3] = val3;
+        tabDouble[2] = val3;
+        tabDouble[3] = val4;
         tabDouble[4] = val5;
 
         //valResistance = computeValue(nbAnneaux, tabDouble);
@@ -41,8 +41,8 @@ public class Resistance {
     public Resistance(double val, double val2, double val3, double val4, double val5, double val6){
         tabDouble[0] = val;
         tabDouble[1] = val2;
-        tabDouble[2] = val4;
-        tabDouble[3] = val3;
+        tabDouble[2] = val3;
+        tabDouble[3] = val4;
         tabDouble[4] = val5;
         tabDouble[5] = val6;
 
