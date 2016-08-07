@@ -19,8 +19,6 @@ public class ColorsToleranceValues {
         colorsValues.put("#096A09", 0.5);
         colorsValues.put("#0000FF", 0.25);
         colorsValues.put("#660099", 0.1);
-        colorsValues.put("#606060", 0.05);
-        colorsValues.put("#FFFFFF", 20.0);
         colorsValues.put("#FFD700", 5.0);
         colorsValues.put("#CECECE", 10.0);
 
