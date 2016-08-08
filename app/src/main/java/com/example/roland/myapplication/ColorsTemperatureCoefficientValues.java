@@ -56,6 +56,7 @@ public class ColorsTemperatureCoefficientValues {
         //List<String> myColors = new ArrayList<>();
         Set myColors = getTemperatureCoefficientColorsValue().keySet(); //retourne la liste des clés du Map
         List listOfMyColors = new ArrayList( myColors ); //conversion du Set en List
+        AlgorithmToSort.sortListColorsRing6(listOfMyColors); //utilisation de l'algorithme de trie
         return listOfMyColors;
     }
 }

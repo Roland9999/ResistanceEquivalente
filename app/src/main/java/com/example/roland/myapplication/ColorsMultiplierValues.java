@@ -24,8 +24,8 @@ public class ColorsMultiplierValues {
         colorsValues.put("#660099", 7);
         colorsValues.put("#606060", 8);
         colorsValues.put("#FFFFFF", 9);
-        colorsValues.put("#FFD700", -2);
-        colorsValues.put("#CECECE", -1);
+        colorsValues.put("#FFD700", -1);
+        colorsValues.put("#CECECE", -2);
 
         return colorsValues;
     }
@@ -48,6 +48,7 @@ public class ColorsMultiplierValues {
         //List<String> myColors = new ArrayList<>();
         Set myColors = getMultiplierColorsValue().keySet(); //retourne la liste des clés du Map
         List listOfMyColors = new ArrayList( myColors ); //conversion du Set en List
+        AlgorithmToSort.sortListColorsRing4(listOfMyColors); // utilisation de l'algorithme de trie
         return listOfMyColors;
     }
 
