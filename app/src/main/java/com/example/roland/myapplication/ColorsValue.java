@@ -13,7 +13,7 @@ import java.util.Set;
 public class ColorsValue {
 
 
-    public static Map<String, Integer> getColorsValue(){
+    public static Map<String, Integer> getColorsValue(){ //Correspond au anneaux pour les chiffres des centaines, dizaines et unités.
         Map<String, Integer> colorsValues;
         colorsValues = new HashMap<>();
         colorsValues.put("#000000", 0); //black

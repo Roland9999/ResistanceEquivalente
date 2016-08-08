@@ -37,7 +37,7 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner2);
                         Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner3);
-                        Spinner spinner4 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 3 à l'affichage prend 10couleurs devrais en prendre 12.
+                        Spinner spinner4 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 4 prend 12couleurs  mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
                         takingSpinnerValueRes4Rings(spinner4);
                         break;
                     case 4: //for resitance with 4 rings
@@ -45,7 +45,7 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner22);
                         Spinner spinner33 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner33);
-                        Spinner spinner44 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 3 à l'affichage prend 10couleurs devrais en prendre 12.
+                        Spinner spinner44 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 4 prend 12couleurs  mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
                         takingSpinnerValueRes4Rings(spinner44);
                         Spinner spinner5 = (Spinner) findViewById(R.id.spinner6);
                         takingSpinnerValueRes5Rings(spinner5);
@@ -55,11 +55,11 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner222);
                         Spinner spinner333 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner333);
-                        Spinner spinner444 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 3 à l'affichage prend 12couleurs
+                        Spinner spinner444 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 3 prend bien 10couleurs mais ne fais plus rien tant que le cinquième anneaux n'est pas modifier ensuite il agit comme le multiplicateur
                         takingSpinnerValueRes3Rings_2(spinner444);
-                        Spinner spinner55 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 4 à l'affichage prend 10couleurs
+                        Spinner spinner55 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 4 prend bien 12couleurs mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
                         takingSpinnerValueRes4Rings(spinner55);
-                        Spinner spinner6 = (Spinner) findViewById(R.id.spinner6); //l'anneau 5 prend lui bien 9couleurs.
+                        Spinner spinner6 = (Spinner) findViewById(R.id.spinner6); //l'anneau 5 prend lui bien 9couleurs il semble jouer le role de multiplicateur mais il ne fait que refaire le calcule en tenant compte de l'anneau 3.
                         takingSpinnerValueRes5Rings(spinner6);
                         break;
                     case 6: //for resitance with 6 rings
@@ -67,13 +67,13 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner2222);
                         Spinner spinner3333 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner3333);
-                        Spinner spinner4444 = (Spinner) findViewById(R.id.spinner4);//problème lors du test, l'anneau 3 à l'affichage prend 12couleurs
+                        Spinner spinner4444 = (Spinner) findViewById(R.id.spinner4);//problème lors du test, l'anneau 3 prend bien 10couleurs mais ne fais plus rien tant que le cinquième anneaux n'est pas modifier ensuite il agit comme le multiplicateur
                         takingSpinnerValueRes3Rings_2(spinner4444);
-                        Spinner spinner555 = (Spinner) findViewById(R.id.spinner5);//problème lors du test, l'anneau 4 à l'affichage prend 10couleurs
+                        Spinner spinner555 = (Spinner) findViewById(R.id.spinner5);//problème lors du test, l'anneau 4 prend bien 12couleurs mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
                         takingSpinnerValueRes4Rings(spinner555);
-                        Spinner spinner66 = (Spinner) findViewById(R.id.spinner6);
+                        Spinner spinner66 = (Spinner) findViewById(R.id.spinner6);//l'anneau 5 prend lui bien 9couleurs il semble jouer le role de multiplicateur mais il ne fait que refaire le calcule en tenant compte de l'anneau 3.
                         takingSpinnerValueRes5Rings(spinner66);
-                        Spinner spinner7 = (Spinner) findViewById(R.id.spinner7);
+                        Spinner spinner7 = (Spinner) findViewById(R.id.spinner7); //l'anneau 6 prend bien 7couleurs à vérifier quand même car il semble selon le site internet consulté qu'il pourrait avoir en faite 8couleurs... mais quoi qu'il arrive il n'intervient pas dans le calcule, de la même manière que l'anneau 5 il n'entraine que le recalcule du resultat en tenant compte des 4 premiers anneaux.
                         takingSpinnerValueRes6Rings(spinner7);
                         break;
                 }
@@ -142,13 +142,13 @@ public class AddAResistance extends AppCompatActivity {
 
     /**evaluating value of a resistance with 5 rings*/
     public double evaluationResVal5Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal4(), Resistance.getVal3());
+        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
 
     /**evaluating value of a resistance with 6 rings*/
     public double evaluationResVal6Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal4(), Resistance.getVal3());
+        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
 
@@ -160,7 +160,7 @@ public class AddAResistance extends AppCompatActivity {
         if (nbAnneaux == 6) soustracteur = 4;
         return  ((tabDouble[0]*Math.pow(10.0,(nbAnneaux-soustracteur)))+
                 (tabDouble[1]*Math.pow(10.0,(nbAnneaux-(soustracteur + 1))))+
-                (tabDouble[3]*Math.pow(10.0,(nbAnneaux-(soustracteur + 2)))))*Math.pow(10.0,tabDouble[2]);
+                (tabDouble[2]*Math.pow(10.0,(nbAnneaux-(soustracteur + 2)))))*Math.pow(10.0,tabDouble[3]); // j'ai ré-inversé l'indice 2 et 3 car j'ai rajouté une valeur par défaut de 0 à l'indice 2 lorsqu'il ya moins de 5 anneaux.
     }
 
     /**
