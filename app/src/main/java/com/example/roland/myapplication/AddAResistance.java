@@ -85,26 +85,7 @@ public class AddAResistance extends AppCompatActivity {
             }
         });
 
-        //nbRings(spinner);
-
-        //Resistance.setNbAnneaux(nbAnneaux);
-/*
-        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
-        takingSpinnerValueRes3Rings(spinner2);
-        Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
-        takingSpinnerValueRes3Rings_1(spinner3);
-        Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
-        takingSpinnerValueRes3Rings_2(spinner4);
-
-        Spinner spinner5 = (Spinner) findViewById(R.id.spinner5);
-        takingSpinnerValueRes4Rings(spinner5); //for resitance with 4 rings
-
-        Spinner spinner6 = (Spinner) findViewById(R.id.spinner6);
-        takingSpinnerValueRes5Rings(spinner6); //for resitance with 5 rings
-
-        Spinner spinner7 = (Spinner) findViewById(R.id.spinner7);
-        takingSpinnerValueRes6Rings(spinner7); //for resitance with 6 rings
-*/
+        nbRings(spinner);
     }
 
     /**Calling Home */
@@ -121,13 +102,6 @@ public class AddAResistance extends AppCompatActivity {
         Resistance.setNbAnneaux(nbAnneaux);
     }
 
-    /**setting value of variable val*/
-/*    public void setVal(String color){
-        Map<String, Integer> colorsValues = ColorsValue.getColorsValue();
-        Resistance.setVal((double) colorsValues.get(color));
-    }
-*/
-
     /**evaluating value of a resistance with 3 rings*/
     public double evaluationResVal3Rings(){
         Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3());
@@ -139,19 +113,6 @@ public class AddAResistance extends AppCompatActivity {
         Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
         return computeValue2(R.getNbAnneaux(), R.getTabDouble());
     }
-
-    /**evaluating value of a resistance with 5 rings*/
-    public double evaluationResVal5Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4(), Resistance.getVal5());
-        return computeValue2(R.getNbAnneaux(), R.getTabDouble());
-    }
-
-    /**evaluating value of a resistance with 6 rings*/
-/*   public double evaluationResVal6Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4(), Resistance.getVal5(), Resistance.getVal6());
-        return computeValue2(R.getNbAnneaux(), R.getTabDouble());
-    }
-*/
 
     public double computeValue(int nbAnneaux, double[] tabDouble){
         int soustracteur = 2;
@@ -226,6 +187,7 @@ public class AddAResistance extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal3(ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
                 double value = evaluationResVal3Rings();
+                Resistance.setValResistance(value);
                 TextView total = (TextView)findViewById(R.id.total);
                 total.setText(String.valueOf(value));
             }
@@ -247,10 +209,7 @@ public class AddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal3((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
-                double value = evaluationResVal3Rings();
-                TextView total = (TextView)findViewById(R.id.total);
-                total.setText(String.valueOf(value));
-            }
+             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -269,10 +228,7 @@ public class AddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal4(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
-   /*             double value = evaluationResVal4Rings();
-                TextView total = (TextView)findViewById(R.id.total);
-                total.setText(String.valueOf(value));*/
-            }
+              }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -292,6 +248,7 @@ public class AddAResistance extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal4(ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
                 double value = evaluationResVal4Rings();
+                Resistance.setValResistance(value);
                 TextView total = (TextView) findViewById(R.id.total);
                 total.setText(String.valueOf(value));
             }
@@ -313,10 +270,7 @@ public class AddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal5(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
-  /*              double value = evaluationResVal5Rings();
-                TextView total = (TextView)findViewById(R.id.total);
-                total.setText(String.valueOf(value));*/
-            }
+             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -335,9 +289,6 @@ public class AddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal6(ColorsTemperatureCoefficientValues.getTemperatureCoefficientColorsValue().get(parent.getSelectedItem().toString()));
-/*                double value = evaluationResVal6Rings();
-                TextView total = (TextView)findViewById(R.id.total);
-                total.setText(String.valueOf(value));*/
             }
 
             @Override
