@@ -7,11 +7,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Resume extends AppCompatActivity {
 
-    List<String> valuesList = ResitancesValuesList.getValuesList();
+    List<String> valuesList;
     ListView myListView;
 
     @Override
@@ -20,6 +21,8 @@ public class Resume extends AppCompatActivity {
         setContentView(R.layout.activity_resume);
 
         myListView = (ListView) findViewById(R.id.listView);
+
+        valuesList = ResitancesValuesList.getValuesList();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, valuesList);
@@ -35,6 +38,7 @@ public class Resume extends AppCompatActivity {
     }
 
     public void callHome(View view){
+        valuesList = new ArrayList<>(); //mise à jour de la liste de valeurs des résistances
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
     }

@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Result extends AppCompatActivity {
 
     double result = 0.0, res = 0.0;
     TextView final_result;
+    List<String> valuesList;
 
 
     @Override
@@ -19,7 +21,7 @@ public class Result extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        List<String> valuesList = ResitancesValuesList.getValuesList();
+        valuesList = ResitancesValuesList.getValuesList();
         final_result = (TextView) findViewById(R.id.final_result);
 
         int circuitType = ChooseComplexType.getCircuitType();
@@ -39,6 +41,7 @@ public class Result extends AppCompatActivity {
     }
 
     public void callHome(View view){
+        valuesList = new ArrayList<>(); //mise à jour de la liste de valeurs des résistances
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
     }
