@@ -8,7 +8,7 @@ public class Resistance {
 
     private static int nbAnneaux;
     private double[] tabDouble = {0.0,0.0,1.0,0.0,20.0,0.0};
-    private double valResistance;
+    private static double valResistance;
     private static double val, val2, val3, val4, val5, val6;
 
     public Resistance(double val, double val2, double val3){
@@ -28,7 +28,7 @@ public class Resistance {
         //valResistance = computeValue(nbAnneaux, tabDouble);
     }
 
-    public Resistance(double val, double val2, double val3, double val4, double val5){
+/*    public Resistance(double val, double val2, double val3, double val4, double val5){
         tabDouble[0] = val;
         tabDouble[1] = val2;
         tabDouble[2] = val3;
@@ -48,7 +48,7 @@ public class Resistance {
 
         //valResistance = computeValue(nbAnneaux, tabDouble);
     }
-
+*/
 
     public static int getNbAnneaux() {
         return nbAnneaux;
@@ -66,12 +66,12 @@ public class Resistance {
         this.tabDouble = tabDouble;
     }
 
-    public double getValResistance() {
+    public static double getValResistance() {
         return valResistance;
     }
 
-    public void setValResistance(double valResistance) {
-        this.valResistance = valResistance;
+    public static void setValResistance(double valResistance) {
+        Resistance.valResistance = valResistance;
     }
 
     public static double getVal() {
