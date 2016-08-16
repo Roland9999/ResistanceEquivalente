@@ -20,7 +20,7 @@
         android:text="The Equivalent Resistance of your circuit is : " />
 
     <TextView
-        android:id="@+id/total"
+        android:id="@+id/final_result"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:background="@color/Gray"
@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:textSize="25sp"
-        android:text="Result...."/>
+        />
 
     <Button
         android:id="@+id/home"
