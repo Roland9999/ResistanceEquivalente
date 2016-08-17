@@ -31,14 +31,21 @@ public class Resume extends AppCompatActivity {
         //int val = ChooseComplexType.getCircuitType();
     }
 
-    /**Calling activity AddAResistance */
+    /**Calling activity Result */
     public void callResultPage(View view){
         Intent intent  = new Intent(this, Result.class);
         this.startActivity(intent);
     }
 
+    /**Calling ChhoseComplexType class with MODIFY button*/
+    public void modifyBtn(View v){
+        ResitancesValuesList.setValuesList(new ArrayList<String>()); //mise à jour de la liste de valeurs des résistances
+        Intent intent = new Intent(this, ChooseComplexType.class);
+        this.startActivity(intent);
+    }
+
     public void callHome(View view){
-        valuesList = new ArrayList<>(); //mise à jour de la liste de valeurs des résistances
+        ResitancesValuesList.setValuesList(new ArrayList<String>()); //mise à jour de la liste de valeurs des résistances
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
     }

@@ -41,7 +41,7 @@ public class Result extends AppCompatActivity {
     }
 
     public void callHome(View view){
-        valuesList = new ArrayList<>(); //mise à jour de la liste de valeurs des résistances
+        ResitancesValuesList.setValuesList(new ArrayList<String>()); //mise à jour de la liste de valeurs des résistances
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
     }
