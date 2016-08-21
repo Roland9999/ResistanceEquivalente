@@ -15,7 +15,9 @@
         android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:text="Enter a resistance characteristics :" />
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="Enter a resistance's characteristics :" />
 
     <TextView
         android:id="@+id/nomber_rings_text"
@@ -23,7 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/main_text_view"
         android:layout_marginTop="60dp"
-        android:text="Enter the number of rings of resistance :" />
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="Number of rings :" />
 
     <Spinner
         android:id="@+id/spinner1"
@@ -39,6 +43,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/nomber_rings_text"
         android:layout_marginTop="30dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:text="Select color of any ring :" />
     <Spinner
         android:id="@+id/spinner2"
@@ -91,10 +97,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/spinner5"
         android:layout_marginTop="30dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:text="The value of the resistance is : "/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="40dp"
         android:id="@+id/total"
         android:background="@color/Gray"
@@ -104,7 +112,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="40dp"
         android:id="@+id/unity"
         android:background="@color/Gray"
@@ -114,7 +122,7 @@
         android:layout_alignEnd="@+id/spinner1" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="40dp"
         android:id="@+id/signe"
         android:background="@color/Gray"
@@ -124,7 +132,7 @@
         android:layout_alignStart="@+id/spinner6" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
         android:layout_height="40dp"
         android:id="@+id/tolerance"
         android:background="@color/Gray"
