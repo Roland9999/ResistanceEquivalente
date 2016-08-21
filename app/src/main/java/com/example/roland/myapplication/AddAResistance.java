@@ -21,7 +21,6 @@ public class AddAResistance extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.nb, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
-        //int val = Integer.parseInt(spinner.getSelectedItem().toString()); //to get the entry
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
@@ -142,9 +141,6 @@ public class AddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
- /*               double value = evaluationResVal3Rings();
-                TextView total = (TextView)findViewById(R.id.total);
-                total.setText(String.valueOf(value));*/
             }
 
             @Override
@@ -164,9 +160,6 @@ public class AddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal2((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
-   /*             double value = evaluationResVal3Rings();
-                TextView total = (TextView)findViewById(R.id.total);
-                total.setText(String.valueOf(value));*/
             }
 
             @Override
@@ -190,6 +183,9 @@ public class AddAResistance extends AppCompatActivity {
                 Resistance.setValResistance(value);
                 TextView total = (TextView)findViewById(R.id.total);
                 total.setText(String.valueOf(value));
+
+                TextView tolerance = (TextView)findViewById(R.id.tolerance);
+                tolerance.setText(" 20 % ");
             }
 
             @Override
@@ -228,6 +224,9 @@ public class AddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal4(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
+
+                TextView tolerance = (TextView)findViewById(R.id.tolerance);
+                tolerance.setText( String.valueOf(Resistance.getVal4())+" % ");
               }
 
             @Override
@@ -270,6 +269,9 @@ public class AddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal5(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
+
+                TextView tolerance = (TextView)findViewById(R.id.tolerance);
+                tolerance.setText( String.valueOf(Resistance.getVal5())+" % ");
              }
 
             @Override
