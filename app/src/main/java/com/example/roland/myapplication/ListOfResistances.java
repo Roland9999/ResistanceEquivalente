@@ -180,9 +180,6 @@ public class ListOfResistances extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
- /*               double value = evaluationResVal3Rings();
-                TextView total = (TextView)findViewById(R.id.total);
-                total.setText(String.valueOf(value));*/
             }
 
             @Override
@@ -202,9 +199,6 @@ public class ListOfResistances extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal2((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
-   /*             double value = evaluationResVal3Rings();
-                TextView total = (TextView)findViewById(R.id.total);
-                total.setText(String.valueOf(value));*/
             }
 
             @Override
@@ -225,11 +219,11 @@ public class ListOfResistances extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal3(ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
                 value = evaluationResVal3Rings();
-                /*Resistance.setValResistance(value);
-                new ResitancesValuesList(String.valueOf(Resistance.getValResistance()));*/
-                //myList = new ResitancesValuesList(String.valueOf(value));
                 TextView total = (TextView) findViewById(R.id.total);
                 total.setText(String.valueOf(value));
+
+                TextView tolerance = (TextView)findViewById(R.id.tolerance);
+                tolerance.setText(" 20 % ");
             }
 
             @Override
@@ -268,6 +262,8 @@ public class ListOfResistances extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal4(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
+                TextView tolerance = (TextView)findViewById(R.id.tolerance);
+                tolerance.setText( String.valueOf(Resistance.getVal4())+" % ");
             }
 
             @Override
@@ -288,9 +284,6 @@ public class ListOfResistances extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal4(ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
                 value = evaluationResVal4Rings();
-                /*Resistance.setValResistance(value);
-                new ResitancesValuesList(String.valueOf(Resistance.getValResistance()));*/
-                //myList = new ResitancesValuesList(String.valueOf(evaluationResVal4Rings()));
                 TextView total = (TextView) findViewById(R.id.total);
                 total.setText(String.valueOf(value));
             }
@@ -312,6 +305,8 @@ public class ListOfResistances extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal5(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
+                TextView tolerance = (TextView)findViewById(R.id.tolerance);
+                tolerance.setText( String.valueOf(Resistance.getVal5())+" % ");
             }
 
             @Override
