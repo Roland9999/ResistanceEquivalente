@@ -1,11 +1,11 @@
 package com.example.roland.myapplication;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Surface;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,24 +28,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        // Récupération de l'orientation de l'écran
-        int rotationEcran = this.getWindowManager().getDefaultDisplay().getRotation();
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
 
-        // Et positionner ainsi le nombre de degrés de rotation
-        int degrees = 0;
-        switch (rotationEcran) {
-            case Surface.ROTATION_0: degrees = 0;
-                break;
-            case Surface.ROTATION_90: degrees = 90;
-                break;
-            case Surface.ROTATION_180: degrees = 180;
-                break;
-            case Surface.ROTATION_270: degrees = 270;
-                break;
+        // Checks the orientation of the screen
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
         }
-
-        Log.d ("test orientation", "=" + degrees);
     }
+
 }
