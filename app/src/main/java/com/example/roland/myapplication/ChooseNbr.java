@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class ChooseNbr extends AppCompatActivity {
 
@@ -27,13 +26,10 @@ public class ChooseNbr extends AppCompatActivity {
                 try {
                     setNbRes(Integer.parseInt(nbResistances));
                 } catch(NumberFormatException nfe) {
-                    System.out.println("Could not parse " + nfe);
+                    System.out.println("Could not parse " + nfe + " in integer");
                 }
-                //Toast msg = Toast.makeText(getBaseContext(),nbResistances,Toast.LENGTH_LONG);
-                //msg.show();
             }
         });
-        //nbResistances = editText.getText().toString().trim(); // trim() permet d'enlever les espaces avant et après
 
     }
 

@@ -115,7 +115,6 @@ public class ListOfResistances extends AppCompatActivity {
     public void nextResValue(View view) {
         myList = new ResitancesValuesList(String.valueOf(value));
         int nbResist = getIntent().getExtras().getInt("remainingLoops");
-        //getIntent().getExtras().getInt("remainingLoops");
         nbResist--;
         if (nbResist > 0) {
             Intent i = new Intent(this, ListOfResistances.class);
