@@ -11,16 +11,16 @@ public class Resistance {
     private static double valResistance;
     private static double val, val2, val3, val4, val5, val6;
 
-    public Resistance(double val, double val2, double val3){
+    /*public Resistance(double val, double val2, double val3){
         tabDouble[0] = val;
         tabDouble[1] = val2;
-        tabDouble[2] = 0.0; //ajout d'une valeur pap défaut à l'indice 2 qui est pris en compte dans le calcul.
+        tabDouble[2] = 0.0; //ajout d'une valeur par défaut à l'indice 2 qui est pris en compte dans le calcul.
         tabDouble[3] = val3;
         tabDouble[4] = 20.0;
         tabDouble[5] = 0.0;
 
         //valResistance = computeValue(nbAnneaux, tabDouble);
-    }
+    }*/
 
     public Resistance(double val, double val2, double val3, double val4){
         tabDouble[0] = val;

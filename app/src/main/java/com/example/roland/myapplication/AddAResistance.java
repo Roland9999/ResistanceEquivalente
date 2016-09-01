@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class AddAResistance extends AppCompatActivity {
 
     @Override
@@ -21,6 +23,7 @@ public class AddAResistance extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.nb, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
+        //int val = Integer.parseInt(spinner.getSelectedItem().toString()); //to get the entry
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
@@ -36,42 +39,42 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner2);
                         Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
                         takingSpinnerValueRes3Rings_1(spinner3);
-                        Spinner spinner4 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 4 prend 12couleurs  mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
-                        takingSpinnerValueRes4Rings(spinner4);
+                        Spinner spinner4 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 4 prend 12couleurs  mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
+                        takingSpinnerValueRes3Rings_2(spinner4);
                         break;
                     case 4: //for resitance with 4 rings
-                        Spinner spinner22 = (Spinner) findViewById(R.id.spinner2);
-                        takingSpinnerValueRes3Rings(spinner22);
-                        Spinner spinner33 = (Spinner) findViewById(R.id.spinner3);
-                        takingSpinnerValueRes3Rings_1(spinner33);
-                        Spinner spinner44 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 4 prend 12couleurs  mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
-                        takingSpinnerValueRes4Rings(spinner44);
-                        Spinner spinner5 = (Spinner) findViewById(R.id.spinner6);
+                        spinner2 = (Spinner) findViewById(R.id.spinner2);
+                        takingSpinnerValueRes3Rings(spinner2);
+                        spinner3 = (Spinner) findViewById(R.id.spinner3);
+                        takingSpinnerValueRes3Rings_1(spinner3);
+                        spinner4 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 4 prend 12couleurs  mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
+                        takingSpinnerValueRes3Rings_2(spinner4);
+                        Spinner spinner5 = (Spinner) findViewById(R.id.spinner5);
                         takingSpinnerValueRes5Rings(spinner5);
                         break;
                     case 5: //for resitance with 5 rings
-                        Spinner spinner222 = (Spinner) findViewById(R.id.spinner2);
-                        takingSpinnerValueRes3Rings(spinner222);
-                        Spinner spinner333 = (Spinner) findViewById(R.id.spinner3);
-                        takingSpinnerValueRes3Rings_1(spinner333);
-                        Spinner spinner444 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 3 prend bien 10couleurs mais ne fais plus rien tant que le cinquième anneaux n'est pas modifier ensuite il agit comme le multiplicateur
-                        takingSpinnerValueRes3Rings_2(spinner444);
-                        Spinner spinner55 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 4 prend bien 12couleurs mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
-                        takingSpinnerValueRes4Rings(spinner55);
+                        spinner2 = (Spinner) findViewById(R.id.spinner2);
+                        takingSpinnerValueRes3Rings(spinner2);
+                        spinner3 = (Spinner) findViewById(R.id.spinner3);
+                        takingSpinnerValueRes3Rings_1(spinner3);
+                        spinner4 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 3 prend bien 10couleurs mais ne fais plus rien tant que le cinquième anneaux n'est pas modifier ensuite il agit comme le multiplicateur
+                        takingSpinnerValueRes3Rings_3(spinner4);
+                        spinner5 = (Spinner) findViewById(R.id.spinner5); //problème lors du test, l'anneau 4 prend bien 12couleurs mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
+                        takingSpinnerValueRes3Rings_2(spinner5);
                         Spinner spinner6 = (Spinner) findViewById(R.id.spinner6); //l'anneau 5 prend lui bien 9couleurs il semble jouer le role de multiplicateur mais il ne fait que refaire le calcule en tenant compte de l'anneau 3.
                         takingSpinnerValueRes5Rings(spinner6);
                         break;
                     case 6: //for resitance with 6 rings
-                        Spinner spinner2222 = (Spinner) findViewById(R.id.spinner2);
-                        takingSpinnerValueRes3Rings(spinner2222);
-                        Spinner spinner3333 = (Spinner) findViewById(R.id.spinner3);
-                        takingSpinnerValueRes3Rings_1(spinner3333);
-                        Spinner spinner4444 = (Spinner) findViewById(R.id.spinner4);//problème lors du test, l'anneau 3 prend bien 10couleurs mais ne fais plus rien tant que le cinquième anneaux n'est pas modifier ensuite il agit comme le multiplicateur
-                        takingSpinnerValueRes3Rings_2(spinner4444);
-                        Spinner spinner555 = (Spinner) findViewById(R.id.spinner5);//problème lors du test, l'anneau 4 prend bien 12couleurs mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
-                        takingSpinnerValueRes4Rings(spinner555);
-                        Spinner spinner66 = (Spinner) findViewById(R.id.spinner6);//l'anneau 5 prend lui bien 9couleurs il semble jouer le role de multiplicateur mais il ne fait que refaire le calcule en tenant compte de l'anneau 3.
-                        takingSpinnerValueRes5Rings(spinner66);
+                        spinner2 = (Spinner) findViewById(R.id.spinner2);
+                        takingSpinnerValueRes3Rings(spinner2);
+                        spinner3 = (Spinner) findViewById(R.id.spinner3);
+                        takingSpinnerValueRes3Rings_1(spinner3);
+                        spinner4 = (Spinner) findViewById(R.id.spinner4);//problème lors du test, l'anneau 3 prend bien 10couleurs mais ne fais plus rien tant que le cinquième anneaux n'est pas modifier ensuite il agit comme le multiplicateur
+                        takingSpinnerValueRes3Rings_3(spinner4);
+                        spinner5 = (Spinner) findViewById(R.id.spinner5);//problème lors du test, l'anneau 4 prend bien 12couleurs mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
+                        takingSpinnerValueRes3Rings_2(spinner5);
+                        spinner6 = (Spinner) findViewById(R.id.spinner6);//l'anneau 5 prend lui bien 9couleurs il semble jouer le role de multiplicateur mais il ne fait que refaire le calcule en tenant compte de l'anneau 3.
+                        takingSpinnerValueRes5Rings(spinner6);
                         Spinner spinner7 = (Spinner) findViewById(R.id.spinner7); //l'anneau 6 prend bien 7couleurs à vérifier quand même car il semble selon le site internet consulté qu'il pourrait avoir en faite 8couleurs... mais quoi qu'il arrive il n'intervient pas dans le calcule, de la même manière que l'anneau 5 il n'entraine que le recalcule du resultat en tenant compte des 4 premiers anneaux.
                         takingSpinnerValueRes6Rings(spinner7);
                         break;
@@ -83,12 +86,16 @@ public class AddAResistance extends AppCompatActivity {
                 Resistance.setNbAnneaux(3);
             }
         });
-
-        nbRings(spinner);
     }
 
     /**Calling Home */
     public void callHome(View view){
+        Resistance.setVal(0.0);
+        Resistance.setVal2(0.0);
+        Resistance.setVal3(0.0);
+        Resistance.setVal4(0.0);
+        Resistance.setVal5(20.0);
+        Resistance.setVal6(0.0);
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
     }
@@ -101,23 +108,30 @@ public class AddAResistance extends AppCompatActivity {
         Resistance.setNbAnneaux(nbAnneaux);
     }
 
+    /**setting value of variable val*/
+/*    public void setVal(String color){
+        Map<String, Integer> colorsValues = ColorsValue.getColorsValue();
+        Resistance.setVal((double) colorsValues.get(color));
+    }
+*/
+
     /**evaluating value of a resistance with 3 rings*/
-    public double evaluationResVal3Rings(){
+   /* public double evaluationResVal3Rings(){
         Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
-    }
+    }*/
 
     /**evaluating value of a resistance with 4 rings*/
-    public double evaluationResVal4Rings(){
+    /*public double evaluationResVal4Rings(){
         Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
-    }
+    }*/
 
     /**evaluating value of a resistance with 5 rings*/
-    public double evaluationResVal5Rings(){
+    /*public double evaluationResVal5Rings(){
         Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
-    }
+    }*/
 
     /**evaluating value of a resistance with 6 rings*/
     public double evaluationResVal6Rings(){
@@ -177,6 +191,25 @@ public class AddAResistance extends AppCompatActivity {
         });
     }
 
+    public void takingSpinnerValueRes3Rings_3(Spinner spinner){
+        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Resistance.setVal3((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Resistance.setVal3(0.0);
+            }
+        });
+    }
+
     public void takingSpinnerValueRes3Rings_2(Spinner spinner){
         CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsMultiplierValues.ringsMultiplierColors());
         // Specify the layout to use when the list of choices appears
@@ -186,78 +219,14 @@ public class AddAResistance extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal3(ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
-                double value = evaluationResVal3Rings();
-                Resistance.setValResistance(value);
+                Resistance.setVal4((double) ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
+                double value = evaluationResVal6Rings();
                 TextView total = (TextView)findViewById(R.id.total);
                 total.setText(String.valueOf(value));
 
+                Resistance.setVal5(20.0);
                 TextView tolerance = (TextView)findViewById(R.id.tolerance);
-                tolerance.setText(" 20 % ");
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Resistance.setVal3(0.0);
-            }
-        });
-    }
-
-    public void takingSpinnerValueRes3Rings_3(Spinner spinner) {
-        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal3((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
-             }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Resistance.setVal3(0.0);
-            }
-        });
-    }
-
-    public void takingSpinnerValueRes4Rings_0(Spinner spinner){
-        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsToleranceValues.ringsToleranceColors());
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal4(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
-
-                TextView tolerance = (TextView)findViewById(R.id.tolerance);
-                tolerance.setText( String.valueOf(Resistance.getVal4())+" % ");
-              }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Resistance.setVal4(0.0);
-            }
-        });
-    }
-
-    public void takingSpinnerValueRes4Rings_1(Spinner spinner) {
-        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsMultiplierValues.ringsMultiplierColors());
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal4(ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
-                double value = evaluationResVal4Rings();
-                Resistance.setValResistance(value);
-                TextView total = (TextView) findViewById(R.id.total);
-                total.setText(String.valueOf(value));
+                tolerance.setText( String.valueOf(Resistance.getVal5())+" % ");
             }
 
             @Override
@@ -276,15 +245,17 @@ public class AddAResistance extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal5(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
+                Resistance.setVal5((double) ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
 
                 TextView tolerance = (TextView)findViewById(R.id.tolerance);
                 tolerance.setText( String.valueOf(Resistance.getVal5())+" % ");
-             }
+            }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Resistance.setVal5(0.0);
+                Resistance.setVal5(20.0);
+                TextView tolerance = (TextView)findViewById(R.id.tolerance);
+                tolerance.setText( String.valueOf(Resistance.getVal5())+" % ");
             }
         });
     }
@@ -298,12 +269,12 @@ public class AddAResistance extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal6(ColorsTemperatureCoefficientValues.getTemperatureCoefficientColorsValue().get(parent.getSelectedItem().toString()));
+                Resistance.setVal6((double) ColorsTemperatureCoefficientValues.getTemperatureCoefficientColorsValue().get(parent.getSelectedItem().toString()));
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Resistance.setVal6(0.0);
+                Resistance.setVal(0.0);
             }
         });
     }

@@ -138,18 +138,18 @@ public class MultiAddAResistance extends AppCompatActivity {
     /**
      * evaluating value of a resistance with 3 rings
      */
-    public double evaluationResVal3Rings() {
+   /* public double evaluationResVal3Rings() {
         Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
-    }
+    }*/
 
     /**
      * evaluating value of a resistance with 4 rings
      */
-    public double evaluationResVal4Rings() {
+   /* public double evaluationResVal4Rings() {
         Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
-    }
+    }*/
 
     /**
      * evaluating value of a resistance with 5 rings
@@ -191,9 +191,7 @@ public class MultiAddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
-                double value = evaluationResVal3Rings();
-                TextView total = (TextView) findViewById(R.id.total);
-                total.setText(String.valueOf(value));
+
             }
 
             @Override
@@ -213,9 +211,7 @@ public class MultiAddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal2((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
-                double value = evaluationResVal3Rings();
-                TextView total = (TextView) findViewById(R.id.total);
-                total.setText(String.valueOf(value));
+
             }
 
             @Override
@@ -235,9 +231,7 @@ public class MultiAddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal3((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
-                double value = evaluationResVal3Rings();
-                TextView total = (TextView) findViewById(R.id.total);
-                total.setText(String.valueOf(value));
+
             }
 
             @Override
@@ -257,7 +251,7 @@ public class MultiAddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal4((double) ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
-                double value = evaluationResVal4Rings();
+                double value = evaluationResVal6Rings();
                 TextView total = (TextView) findViewById(R.id.total);
                 total.setText(String.valueOf(value));
             }
@@ -279,9 +273,7 @@ public class MultiAddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal5((double) ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
-                double value = evaluationResVal5Rings();
-                TextView total = (TextView) findViewById(R.id.total);
-                total.setText(String.valueOf(value));
+
             }
 
             @Override
@@ -301,9 +293,7 @@ public class MultiAddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal6((double) ColorsTemperatureCoefficientValues.getTemperatureCoefficientColorsValue().get(parent.getSelectedItem().toString()));
-                double value = evaluationResVal6Rings();
-                TextView total = (TextView) findViewById(R.id.total);
-                total.setText(String.valueOf(value));
+
             }
 
             @Override
