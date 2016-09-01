@@ -3,53 +3,59 @@ package com.example.roland.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 public class ChooseNbr extends AppCompatActivity {
 
-
-    public final static String userChoice = "com.example.roland.myapplication.userChoice";
-
-    private String nbrResistance;
+    private int nbRes;
+    private EditText editText;
+    private String nbResistances;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_nbr);
-        EditText editText = (EditText) findViewById(R.id.enter_number);
-        //create a variable for save the number written by the user.
-        setNbrResistance(editText.getText().toString());
-        String enterNbrResist = getNbrResistance();
-        //Integer nbrResInteger = Integer.parseInt(enterNbrResist); //impossible de convertire correctemennt la variable en int, cela fait buguer l'application
-        Intent nbrResistanceSelected = new Intent();
-        nbrResistanceSelected.putExtra(ChooseNbr.userChoice, enterNbrResist);
+
+        editText = (EditText) findViewById(R.id.enter_number);
+        editText.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nbResistances = editText.getText().toString().intern();
+                try {
+                    setNbRes(Integer.parseInt(nbResistances));
+                } catch(NumberFormatException nfe) {
+                    System.out.println("Could not parse " + nfe);
+                }
+                //Toast msg = Toast.makeText(getBaseContext(),nbResistances,Toast.LENGTH_LONG);
+                //msg.show();
+            }
+        });
+        //nbResistances = editText.getText().toString().trim(); // trim() permet d'enlever les espaces avant et après
+
     }
 
 
-    public void onValidate(View view) {
-        Intent intent = new Intent(this, MultiAddAResistance.class);
-        this.startActivity(intent);
-    }
-
-
-    /**
-     * Calling Home
-     */
-    public void callHome(View view) {
+    /**Calling Home */
+    public void callHome(View view){
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
     }
 
-    public String getNbrResistance() {
-        return nbrResistance;
+    /**validation of the number of resistances*/
+    public void validationNbRes(View v){
+        Intent intent = new Intent(this, ListOfResistances.class);
+        intent.putExtra("remainingLoops", getNbRes()); //passage en boucle de l'activité getNbRes() fois
+        startActivity(intent);
     }
 
-    public void setNbrResistance(String nbrResistance) {
-        this.nbrResistance = nbrResistance;
+    public int getNbRes() {
+        return nbRes;
     }
 
+    public void setNbRes(int nbRes) {
+        this.nbRes = nbRes;
+    }
 }

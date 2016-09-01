@@ -7,6 +7,8 @@ import android.view.View;
 
 public class ChooseComplexType extends AppCompatActivity {
 
+    private static int circuitType = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,8 +17,26 @@ public class ChooseComplexType extends AppCompatActivity {
 
     /**Calling activity ChooseNbr */
     public void callChooseNbr(View view){
-        Intent intent  = new Intent(this, ChooseNbr.class);
-        this.startActivity(intent);
+
+        switch (view.getId()){
+            case R.id.serial_type_button:
+                setCircuitType(1);
+                Intent intent  = new Intent(this, ChooseNbr.class);
+                this.startActivity(intent);
+                break;
+            case R.id.parallel_type_button:
+                setCircuitType(2);
+                Intent intent2  = new Intent(this, ChooseNbr.class);
+                this.startActivity(intent2);
+                break;
+            case R.id.mixte_type_button:
+                setCircuitType(3);
+                Intent intent3  = new Intent(this, ChooseNbr.class);
+                this.startActivity(intent3);
+                break;
+        }
+        //Intent intent  = new Intent(this, ChooseNbr.class);
+        //this.startActivity(intent);
     }
 
 
@@ -26,4 +46,11 @@ public class ChooseComplexType extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+    public static int getCircuitType() {
+        return circuitType;
+    }
+
+    public static void setCircuitType(int circuitType) {
+        ChooseComplexType.circuitType = circuitType;
+    }
 }
