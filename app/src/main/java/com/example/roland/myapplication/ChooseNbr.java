@@ -11,44 +11,29 @@ import android.widget.TextView;
 
 public class ChooseNbr extends AppCompatActivity {
 
+
+    public final static String userChoice = "com.example.roland.myapplication.userChoice";
+
+    private String nbrResistance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_nbr);
         EditText editText = (EditText) findViewById(R.id.enter_number);
         //create a variable for save the number written by the user.
-        String nbrResistance = editText.getText().toString();
-
+        setNbrResistance(editText.getText().toString());
+        String enterNbrResist = getNbrResistance();
+        //Integer nbrResInteger = Integer.parseInt(enterNbrResist); //impossible de convertire correctemennt la variable en int, cela fait buguer l'application
+        Intent nbrResistanceSelected = new Intent();
+        nbrResistanceSelected.putExtra(ChooseNbr.userChoice, enterNbrResist);
     }
 
-    /*public String enterNbr() {
 
-        //protected void onRestart() {}
-        return nbrResistance;
-    }*/
-
-
-
-
-    public void onValidate(View view, String nbrResistance) {
-
+    public void onValidate(View view) {
+        Intent intent = new Intent(this, MultiAddAResistance.class);
+        this.startActivity(intent);
     }
-       /* nbrResistance = enterNbr();
-        int nbrResInteger = Integer.parseInt(nbrResistance);
-        int compter = 0;
-        boolean restart = true;
-        do {
-            if (compter == nbrResInteger) {
-                restart = false;
-                Intent intent = new Intent(this, Resume.class);
-                this.startActivity(intent);
-            } else {
-                compter++;
-                onRestart();
-            }
-        } while (restart);
-
-    }*/
 
 
     /**
@@ -58,4 +43,13 @@ public class ChooseNbr extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
     }
+
+    public String getNbrResistance() {
+        return nbrResistance;
+    }
+
+    public void setNbrResistance(String nbrResistance) {
+        this.nbrResistance = nbrResistance;
+    }
+
 }
