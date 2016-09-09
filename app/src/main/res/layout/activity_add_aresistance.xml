@@ -7,15 +7,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/Roland
-    tools:context="com.example.roland.myapplication.AddAResistance">
+    tools:context="com.example.roland.myapplication.AddAResistance"
+    android:background="@color/White">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="330dip"
+        android:layout_height="300dip"
         android:layout_centerInParent="true"
         android:background="@drawable/image5"
         android:orientation="vertical"

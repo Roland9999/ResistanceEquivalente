@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="horizontal"
-
+    android:background="@color/White"
     tools:context="com.example.roland.myapplication.AddAResistance">
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/main_text_view"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textSize="16sp"
         android:textStyle="bold"
         android:text="Number of rings : " />
@@ -34,16 +34,15 @@
         android:id="@+id/spinner1"
         android:layout_width="80dp"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
-        android:layout_alignParentEnd="true"
-        />
+        android:layout_alignBottom="@+id/colors_rings_text"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/colors_rings_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/nomber_rings_text"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:textSize="16sp"
         android:textStyle="bold"
         android:text="Select color of any ring :" />
@@ -105,52 +104,55 @@
         android:text="The value of the resistance is : "/>
 
     <TextView
-        android:layout_width="240dp"
-        android:layout_height="40dp"
+        android:layout_width="180dp"
+        android:layout_height="37dp"
         android:id="@+id/total"
         android:background="@color/Gray"
-        android:layout_marginTop="10dp"
         android:textSize="25sp"
+        android:textColor="@color/White"
         android:layout_below="@+id/resultat_text"
-        android:layout_toStartOf="@+id/home" />
+        android:layout_alignEnd="@+id/colors_rings_text" />
 
     <TextView
         android:layout_width="80dp"
-        android:layout_height="40dp"
+        android:layout_height="37dp"
         android:id="@+id/unity"
         android:background="@color/Gray"
         android:textSize="25sp"
         android:text=" Ohms"
-        android:layout_alignTop="@+id/total"
-        android:layout_alignEnd="@+id/spinner1" />
+        android:textColor="@color/White"
+        android:layout_alignTop="@+id/tolerance"
+        android:layout_toEndOf="@+id/tolerance" />
 
     <TextView
-        android:layout_width="80dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="37dp"
         android:id="@+id/signe"
         android:background="@color/Gray"
         android:textSize="25sp"
         android:text="  +/-  "
+        android:textColor="@color/White"
         android:layout_alignTop="@+id/total"
-        android:layout_alignStart="@+id/home" />
+        android:layout_toEndOf="@+id/total" />
 
     <TextView
-        android:layout_width="170dp"
-        android:layout_height="40dp"
+        android:layout_width="110dp"
+        android:layout_height="37dp"
         android:id="@+id/tolerance"
         android:background="@color/Gray"
         android:textSize="25sp"
-        android:layout_alignTop="@+id/unity"
-        android:layout_toStartOf="@+id/spinner1" />
+        android:textColor="@color/White"
+        android:layout_alignTop="@+id/signe"
+        android:layout_toEndOf="@+id/signe" />
 
     <Button
         android:id="@+id/home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="HOME"
+        android:onClick="callHome"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="callHome"/>
+        android:layout_toEndOf="@+id/spinner6" />
 
 
 

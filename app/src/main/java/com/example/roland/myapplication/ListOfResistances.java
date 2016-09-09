@@ -180,9 +180,10 @@ public class ListOfResistances extends AppCompatActivity {
         if (nbAnneaux == 4) soustracteur = 3;
         if (nbAnneaux == 5) soustracteur = 3;
         if (nbAnneaux == 6) soustracteur = 4;
-        return  ((tabDouble[0]*Math.pow(10.0,(nbAnneaux-soustracteur)))+
+        double tot = ((tabDouble[0]*Math.pow(10.0,(nbAnneaux-soustracteur)))+
                 (tabDouble[1]*Math.pow(10.0,(nbAnneaux-(soustracteur + 1))))+
                 (tabDouble[2]*Math.pow(10.0,(nbAnneaux-(soustracteur + 2)))))*Math.pow(10.0,tabDouble[3]);
+        return tot;
     }
 
     /**
