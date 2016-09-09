@@ -129,7 +129,7 @@ public class ListOfResistances extends AppCompatActivity {
      */
     public void nextResValue(View view) {
         if (value == 0.0){
-            TextView total = (TextView)findViewById(R.id.total);
+            TextView total = (TextView)findViewById(R.id.error_view);
             total.setText("WARN : Tot = 0.0");
         }
         else {
