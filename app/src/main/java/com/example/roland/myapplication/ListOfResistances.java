@@ -47,45 +47,51 @@ public class ListOfResistances extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 nbRings((Spinner) parent);
                 int nb = Resistance.getNbAnneaux();
+                Spinner spinner2;
+                Spinner spinner3;
+                Spinner spinner4;
+                Spinner spinner5;
+                Spinner spinner6;
+                Spinner spinner7;
                 if (nb == 3) { //for resitance with 3 rings
-                    Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+                    spinner2 = (Spinner) findViewById(R.id.spinner2);
                     takingSpinnerValueRes3Rings(spinner2);
-                    Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
+                    spinner3 = (Spinner) findViewById(R.id.spinner3);
                     takingSpinnerValueRes3Rings_1(spinner3);
-                    Spinner spinner4 = (Spinner) findViewById(R.id.spinner4); //problème lors du test, l'anneau 4 prend 12couleurs  mais fonctionne comme le chiffre après la virgule, il devrait s'agir du multiplicateur.
+                    spinner4 = (Spinner) findViewById(R.id.spinner4); //multiplier
                     takingSpinnerValueRes3Rings_2(spinner4);
                 } else if (nb == 4) { //for resitance with 4 rings
-                    Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+                    spinner2 = (Spinner) findViewById(R.id.spinner2);
                     takingSpinnerValueRes3Rings(spinner2);
-                    Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
+                    spinner3 = (Spinner) findViewById(R.id.spinner3);
                     takingSpinnerValueRes3Rings_1(spinner3);
-                    Spinner spinner4 = (Spinner) findViewById(R.id.spinner4); //multiplier
+                    spinner4 = (Spinner) findViewById(R.id.spinner4); //multiplier
                     takingSpinnerValueRes3Rings_2(spinner4);
-                    Spinner spinner5 = (Spinner) findViewById(R.id.spinner6); //tolerance
+                    spinner5 = (Spinner) findViewById(R.id.spinner6); //tolerance
                     takingSpinnerValueRes5Rings(spinner5);
                 } else if (nb == 5) { //for resitance with 5 rings
-                    Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+                    spinner2 = (Spinner) findViewById(R.id.spinner2);
                     takingSpinnerValueRes3Rings(spinner2);
-                    Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
+                    spinner3 = (Spinner) findViewById(R.id.spinner3);
                     takingSpinnerValueRes3Rings_1(spinner3);
-                    Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
+                    spinner4 = (Spinner) findViewById(R.id.spinner4);
                     takingSpinnerValueRes3Rings_3(spinner4);
-                    Spinner spinner5 = (Spinner) findViewById(R.id.spinner5); //multiplier
+                    spinner5 = (Spinner) findViewById(R.id.spinner5); //multiplier
                     takingSpinnerValueRes3Rings_2(spinner5);
-                    Spinner spinner6 = (Spinner) findViewById(R.id.spinner6); //tolerance
+                    spinner6 = (Spinner) findViewById(R.id.spinner6); //tolerance
                     takingSpinnerValueRes5Rings(spinner6);
                 } else if (nb == 6) { //for resitance with 6 rings
-                    Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+                    spinner2 = (Spinner) findViewById(R.id.spinner2);
                     takingSpinnerValueRes3Rings(spinner2);
-                    Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
+                    spinner3 = (Spinner) findViewById(R.id.spinner3);
                     takingSpinnerValueRes3Rings_1(spinner3);
-                    Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
+                    spinner4 = (Spinner) findViewById(R.id.spinner4);
                     takingSpinnerValueRes3Rings_3(spinner4);
-                    Spinner spinner5 = (Spinner) findViewById(R.id.spinner5); //multiplier
+                    spinner5 = (Spinner) findViewById(R.id.spinner5); //multiplier
                     takingSpinnerValueRes3Rings_2(spinner5);
-                    Spinner spinner6 = (Spinner) findViewById(R.id.spinner6); //tolerance
+                    spinner6 = (Spinner) findViewById(R.id.spinner6); //tolerance
                     takingSpinnerValueRes5Rings(spinner6);
-                    Spinner spinner7 = (Spinner) findViewById(R.id.spinner7);
+                    spinner7 = (Spinner) findViewById(R.id.spinner7);
                     takingSpinnerValueRes6Rings(spinner7);
                 }
             }
@@ -124,14 +130,16 @@ public class ListOfResistances extends AppCompatActivity {
     public void nextResValue(View view) {
         myList = new ResitancesValuesList(String.valueOf(value));
         int nbResist = getIntent().getExtras().getInt("remainingLoops");
-        //getIntent().getExtras().getInt("remainingLoops");
+        //int nbBranch = getIntent().getExtras().getInt("remainingLoops2");
         nbResist--;
-        if (nbResist > 0) {
+        if (nbResist > 0 /*&& nbBranch == 0*/) {
             Intent i = new Intent(this, ListOfResistances.class);
             i.putExtra("remainingLoops", nbResist);
             this.startActivity(i);
         } else {
-            this.startActivity(new Intent(this, Resume.class));
+            Intent ir = new Intent(this, Resume.class);
+            ir.putExtra("remainingLoops", nbResist);
+            this.startActivity(ir);
         }
     }
 
@@ -175,7 +183,7 @@ public class ListOfResistances extends AppCompatActivity {
         if (nbAnneaux == 6) soustracteur = 4;
         return  ((tabDouble[0]*Math.pow(10.0,(nbAnneaux-soustracteur)))+
                 (tabDouble[1]*Math.pow(10.0,(nbAnneaux-(soustracteur + 1))))+
-                (tabDouble[2]*Math.pow(10.0,(nbAnneaux-(soustracteur + 2)))))*Math.pow(10.0,tabDouble[3]); // j'ai ré-inversé l'indice 2 et 3 car j'ai rajouté une valeur par défaut de 0 à l'indice 2 lorsqu'il ya moins de 5 anneaux.
+                (tabDouble[2]*Math.pow(10.0,(nbAnneaux-(soustracteur + 2)))))*Math.pow(10.0,tabDouble[3]);
     }
 
     /**
