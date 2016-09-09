@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/Yellow"
     tools:context="com.example.roland.myapplication.MainActivity"
     android:orientation="vertical">
 
@@ -24,24 +25,24 @@
         android:layout_height="100dp"
         android:text="RESISTANCE"
         android:textSize="25sp"
+        android:textColor="@color/White"
         android:onClick="callAddAResistance"
-        android:layout_marginBottom="77dp"
-        android:layout_above="@+id/complex_circuit"
-        android:layout_alignParentStart="true" />
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/main_text_view"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="81dp" />
     <Button
         android:id="@+id/complex_circuit"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:textColor="@color/White"
         android:text="COMPLEX CIRCUIT"
         android:textSize="25sp"
         android:onClick="callChooseComplexType"
-        android:layout_marginBottom="86dp"
-        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="78dp"
+        android:layout_below="@+id/res_val"
         android:layout_alignParentStart="true" />
-
-
-
-
 
 
 </RelativeLayout>

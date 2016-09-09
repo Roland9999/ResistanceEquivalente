@@ -35,12 +35,20 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:text="PARALLEL CIRCUIT"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:onClick="callChooseNbr"
-        android:layout_above="@+id/home"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="58dp" />
+        android:layout_marginTop="58dp"
+        android:layout_below="@+id/serial_type_button"
+        android:layout_centerHorizontal="true"
+        android:onClick="callChooseNbr"/>
+
+    <Button
+        android:id="@+id/mixte_type_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MIXED CIRCUIT"
+        android:layout_marginTop="68dp"
+        android:layout_below="@+id/parallel_type_button"
+        android:layout_centerHorizontal="true"
+        />
 
     <Button
         android:id="@+id/home"
