@@ -6,3 +6,5 @@
 target/**
 .DS_Store
 /captures
+app.iml
+misc.xml
