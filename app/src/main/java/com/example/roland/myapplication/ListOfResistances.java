@@ -128,17 +128,23 @@ public class ListOfResistances extends AppCompatActivity {
      * Calling next activity to fill resistances values
      */
     public void nextResValue(View view) {
-        myList = new ResitancesValuesList(String.valueOf(value));
-        int nbResist = getIntent().getExtras().getInt("remainingLoops");
-        nbResist--;
-        if (nbResist > 0 /*&& nbBranch == 0*/) {
-            Intent i = new Intent(this, ListOfResistances.class);
-            i.putExtra("remainingLoops", nbResist);
-            this.startActivity(i);
-        } else {
-            Intent ir = new Intent(this, Resume.class);
-            ir.putExtra("remainingLoops", nbResist);
-            this.startActivity(ir);
+        if (value == 0.0){
+            TextView total = (TextView)findViewById(R.id.total);
+            total.setText("WARN : Tot = 0.0");
+        }
+        else {
+            myList = new ResitancesValuesList(String.valueOf(value));
+            int nbResist = getIntent().getExtras().getInt("remainingLoops");
+            nbResist--;
+            if (nbResist > 0 /*&& nbBranch == 0*/) {
+                Intent i = new Intent(this, ListOfResistances.class);
+                i.putExtra("remainingLoops", nbResist);
+                this.startActivity(i);
+            } else {
+                Intent ir = new Intent(this, Resume.class);
+                ir.putExtra("remainingLoops", nbResist);
+                this.startActivity(ir);
+            }
         }
     }
 
@@ -169,7 +175,7 @@ public class ListOfResistances extends AppCompatActivity {
     }*/
 
     /**evaluating value of a resistance with 6 rings*/
-    public double evaluationResVal6Rings(){
+    public double evaluationResValRings(){
         Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
@@ -256,7 +262,7 @@ public class ListOfResistances extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal4((double) ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
-                double value = evaluationResVal6Rings();
+                value = evaluationResValRings();
                 TextView total = (TextView)findViewById(R.id.total);
                 total.setText(String.valueOf(value));
 
