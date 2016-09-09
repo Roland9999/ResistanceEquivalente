@@ -8,3 +8,5 @@ target/**
 app/libs/
 app/src/main/res/drawable/
 **.iml
+/app.iml
+/misc.xml
