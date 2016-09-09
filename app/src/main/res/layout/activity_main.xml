@@ -7,18 +7,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/Yellow"
     tools:context="com.example.roland.myapplication.MainActivity"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="100dip"
-        android:layout_height="100dip"
-        android:background="@drawable/logo33"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout"
-        android:layout_below="@+id/res_val"
-        android:layout_alignParentStart="true">
-    </LinearLayout>
+
 
     <TextView
         android:id="@+id/main_text_view"
@@ -34,74 +27,24 @@
         android:layout_height="100dp"
         android:text="RESISTANCE"
         android:textSize="25sp"
-        android:layout_marginTop="78dp"
+        android:textColor="@color/White"
         android:onClick="callAddAResistance"
+        android:background="@color/colorPrimary"
         android:layout_below="@+id/main_text_view"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="81dp" />
     <Button
         android:id="@+id/complex_circuit"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:textColor="@color/White"
         android:text="COMPLEX CIRCUIT"
         android:textSize="25sp"
         android:onClick="callChooseComplexType"
-        android:layout_below="@+id/linearLayout"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="78dp"
+        android:layout_below="@+id/res_val"
         android:layout_alignParentStart="true" />
 
-    <LinearLayout
-        android:layout_width="100dip"
-        android:layout_height="100dip"
-        android:background="@drawable/logo33"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout2"
-        android:layout_below="@+id/main_text_view"
-        android:layout_alignEnd="@+id/res_val" />
-
-    <LinearLayout
-        android:layout_width="100dip"
-        android:layout_height="100dip"
-        android:background="@drawable/logo33"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout3"
-        android:layout_below="@+id/linearLayout5"
-        android:layout_alignEnd="@+id/main_text_view" />
-
-    <LinearLayout
-        android:layout_width="50dip"
-        android:layout_height="50dip"
-        android:background="@drawable/logo33"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout4"
-        android:layout_below="@+id/complex_circuit"
-        android:layout_toEndOf="@+id/linearLayout" />
-
-    <LinearLayout
-        android:layout_width="100dip"
-        android:layout_height="100dip"
-        android:background="@drawable/logo33"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout5"
-        android:layout_below="@+id/main_text_view"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="27dp" />
-
-    <LinearLayout
-        android:layout_width="100dip"
-        android:layout_height="100dip"
-        android:background="@drawable/logo33"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout6"
-        android:layout_alignBottom="@+id/linearLayout4"
-        android:layout_alignStart="@+id/linearLayout2" />
-
-    <LinearLayout
-        android:layout_width="100dip"
-        android:layout_height="100dip"
-        android:background="@drawable/logo33"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout7"
-        android:layout_below="@+id/linearLayout3"
-        android:layout_toEndOf="@+id/linearLayout4"
-        android:layout_marginTop="25dp" />
 
 </RelativeLayout>
