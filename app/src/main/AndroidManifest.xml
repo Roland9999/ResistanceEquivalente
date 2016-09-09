@@ -53,7 +53,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MultiAddAResistance" />
         <activity android:name=".ListOfResistances" />
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for

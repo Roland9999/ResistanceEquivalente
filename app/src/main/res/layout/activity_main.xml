@@ -11,8 +11,6 @@
     tools:context="com.example.roland.myapplication.MainActivity"
     android:orientation="vertical">
 
-
-
     <TextView
         android:id="@+id/main_text_view"
         android:layout_width="wrap_content"
