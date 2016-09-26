@@ -127,7 +127,7 @@ public class AddAResistance extends AppCompatActivity {
         if (nbAnneaux == 6) soustracteur = 4;
         return  ((tabDouble[0]*Math.pow(10.0,(nbAnneaux-soustracteur)))+
                 (tabDouble[1]*Math.pow(10.0,(nbAnneaux-(soustracteur + 1))))+
-                (tabDouble[2]*Math.pow(10.0,(nbAnneaux-(soustracteur + 2)))))*Math.pow(10.0,tabDouble[3]); // j'ai ré-inversé l'indice 2 et 3 car j'ai rajouté une valeur par défaut de 0 à l'indice 2 lorsqu'il ya moins de 5 anneaux.
+                (tabDouble[2]*Math.pow(10.0,(nbAnneaux-(soustracteur + 2)))))*Math.pow(10.0,tabDouble[3]);
     }
 
     /**
