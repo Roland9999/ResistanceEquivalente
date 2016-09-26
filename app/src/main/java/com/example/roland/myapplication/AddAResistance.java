@@ -43,7 +43,7 @@ public class AddAResistance extends AppCompatActivity {
                         spinner7.setVisibility(View.GONE);
                         takingSpinnerValueRes3Rings(spinner2);
                         takingSpinnerValueRes3Rings_1(spinner3);
-                        takingSpinnerValueRes3Rings_2(spinner4);
+                        takingSpinnerValueRes4Rings(spinner4);
                         break;
                     case 4: //for resistance with 4 rings
                         spinner5.setVisibility(View.VISIBLE);
@@ -51,7 +51,7 @@ public class AddAResistance extends AppCompatActivity {
                         spinner7.setVisibility(View.GONE);
                         takingSpinnerValueRes3Rings(spinner2);
                         takingSpinnerValueRes3Rings_1(spinner3);
-                        takingSpinnerValueRes3Rings_2(spinner4);
+                        takingSpinnerValueRes4Rings(spinner4);
                         takingSpinnerValueRes5Rings(spinner5);
                         break;
                     case 5: //for resistance with 5 rings
@@ -61,7 +61,7 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner2);
                         takingSpinnerValueRes3Rings_1(spinner3);
                         takingSpinnerValueRes3Rings_3(spinner4);
-                        takingSpinnerValueRes3Rings_2(spinner5);
+                        takingSpinnerValueRes4Rings(spinner5);
                         takingSpinnerValueRes5Rings(spinner6);
                         break;
                     case 6: //for resistance with 6 rings
@@ -71,7 +71,7 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner2);
                         takingSpinnerValueRes3Rings_1(spinner3);
                         takingSpinnerValueRes3Rings_3(spinner4);
-                        takingSpinnerValueRes3Rings_2(spinner5);
+                        takingSpinnerValueRes4Rings(spinner5);
                         takingSpinnerValueRes5Rings(spinner6);
                         takingSpinnerValueRes6Rings(spinner7);
                         break;
@@ -112,7 +112,7 @@ public class AddAResistance extends AppCompatActivity {
     }
 
     /**evaluating value of a resistance with 6 rings*/
-    public double evaluationResVal6Rings(){
+    public double evaluationResValAllRings(){
         Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
@@ -187,7 +187,7 @@ public class AddAResistance extends AppCompatActivity {
         });
     }
 
-    public void takingSpinnerValueRes3Rings_2(Spinner spinner){
+    public void takingSpinnerValueRes4Rings(Spinner spinner){
         CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsMultiplierValues.ringsMultiplierColors());
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -197,7 +197,7 @@ public class AddAResistance extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal4((double) ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
-                double value = evaluationResVal6Rings();
+                double value = evaluationResValAllRings();
                 TextView total = (TextView)findViewById(R.id.total);
                 total.setText(String.valueOf(value));
 
