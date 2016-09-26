@@ -17,6 +17,7 @@
         android:textSize="27sp"
         android:textAlignment="center"
         android:textStyle="bold"
+        android:textColor="@color/Black"
         android:text="The Equivalent Resistance of your circuit is : "
         android:layout_above="@+id/final_result"
         android:layout_centerHorizontal="true"

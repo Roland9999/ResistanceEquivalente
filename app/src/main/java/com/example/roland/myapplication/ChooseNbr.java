@@ -3,6 +3,7 @@ package com.example.roland.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
@@ -11,7 +12,6 @@ public class ChooseNbr extends AppCompatActivity {
 
     private int nbRes;
     private EditText editText;
-    private String nbResistances;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,31 +19,39 @@ public class ChooseNbr extends AppCompatActivity {
         setContentView(R.layout.activity_choose_nbr);
 
         editText = (EditText) findViewById(R.id.enter_number);
-        editText.setOnClickListener(new OnClickListener() {
+        editText.setOnKeyListener(new View.OnKeyListener() {
+
             @Override
-            public void onClick(View v) {
-                nbResistances = editText.getText().toString().intern();
-                try {
-                    setNbRes(Integer.parseInt(nbResistances));
-                } catch(NumberFormatException nfe) {
-                    System.out.println("Could not parse " + nfe + " in integer");
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (keyCode == event.KEYCODE_ENTER) {
+                    try {
+                        setNbRes(Integer.parseInt(editText.getText().toString().intern()));
+                        validationNbRes(v);
+                    } catch (NumberFormatException nfe) {
+                        System.out.println("Could not parse " + nfe + " in integer");
+                    }
                 }
+                return false;
             }
         });
 
     }
 
 
-    /**Calling Home */
-    public void callHome(View view){
+    /**
+     * Calling Home
+     */
+    public void callHome(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
     }
 
-    /**validation of the number of resistances*/
-    public void validationNbRes(View v){
+    /**
+     * validation of the number of resistances
+     */
+    public void validationNbRes(View v) {
         Intent intent = new Intent(this, ListOfResistances.class);
-        intent.putExtra("remainingLoops", getNbRes()); //passage en boucle de l'activité getNbRes() fois
+        intent.putExtra("remainingLoops", Integer.parseInt(editText.getText().toString().intern())); //passage en boucle de l'activité getNbRes() fois
         startActivity(intent);
     }
 
