@@ -9,6 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
+
 public class AddAResistance extends AppCompatActivity {
 
     @Override
@@ -52,7 +55,7 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner2);
                         takingSpinnerValueRes3Rings_1(spinner3);
                         takingSpinnerValueRes3Rings_2(spinner4);
-                        takingSpinnerValueRes4Rings_0(spinner5);
+                        takingSpinnerValueRes5Rings(spinner5);
                         break;
                     case 5: //for resistance with 5 rings
                         spinner5.setVisibility(View.VISIBLE);
@@ -61,7 +64,7 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner2);
                         takingSpinnerValueRes3Rings_1(spinner3);
                         takingSpinnerValueRes3Rings_3(spinner4);
-                        takingSpinnerValueRes4Rings_1(spinner5);
+                        takingSpinnerValueRes3Rings_2(spinner5);
                         takingSpinnerValueRes5Rings(spinner6);
                         break;
                     case 6: //for resistance with 6 rings
@@ -71,7 +74,7 @@ public class AddAResistance extends AppCompatActivity {
                         takingSpinnerValueRes3Rings(spinner2);
                         takingSpinnerValueRes3Rings_1(spinner3);
                         takingSpinnerValueRes3Rings_3(spinner4);
-                        takingSpinnerValueRes4Rings_1(spinner5);
+                        takingSpinnerValueRes3Rings_2(spinner5);
                         takingSpinnerValueRes5Rings(spinner6);
                         takingSpinnerValueRes6Rings(spinner7);
                         break;
@@ -109,22 +112,6 @@ public class AddAResistance extends AppCompatActivity {
         String[] ringsNb = getResources().getStringArray(R.array.nb);
         int nbAnneaux = Integer.valueOf(ringsNb[spinner_pos]);
         Resistance.setNbAnneaux(nbAnneaux);
-    }
-
-    /**
-     * evaluating value of a resistance with 3 rings
-     */
-    public double evaluationResVal3Rings() {
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3());
-        return computeValue(R.getNbAnneaux(), R.getTabDouble());
-    }
-
-    /**
-     * evaluating value of a resistance with 4 rings
-     */
-    public double evaluationResVal4Rings() {
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
-        return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
 
     /**evaluating value of a resistance with 6 rings*/

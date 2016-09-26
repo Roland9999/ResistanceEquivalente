@@ -14,6 +14,8 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.util.ArrayList;
+
 public class ListOfResistances extends AppCompatActivity {
 
     ResitancesValuesList myList;
@@ -65,7 +67,7 @@ public class ListOfResistances extends AppCompatActivity {
                     takingSpinnerValueRes3Rings(spinner2);
                     takingSpinnerValueRes3Rings_1(spinner3);
                     takingSpinnerValueRes3Rings_2(spinner4);
-                    takingSpinnerValueRes4Rings_0(spinner5);
+                    takingSpinnerValueRes5Rings(spinner5);
                 } else if (nb == 5) { //for resitance with 5 rings
                     spinner5.setVisibility(View.VISIBLE);
                     spinner6.setVisibility(View.VISIBLE);
@@ -73,7 +75,7 @@ public class ListOfResistances extends AppCompatActivity {
                     takingSpinnerValueRes3Rings(spinner2);
                     takingSpinnerValueRes3Rings_1(spinner3);
                     takingSpinnerValueRes3Rings_3(spinner4);
-                    takingSpinnerValueRes4Rings_1(spinner5);
+                    takingSpinnerValueRes3Rings_2(spinner5);
                     takingSpinnerValueRes5Rings(spinner6);
                 } else if (nb == 6) { //for resitance with 6 rings
                     spinner5.setVisibility(View.VISIBLE);
@@ -82,7 +84,7 @@ public class ListOfResistances extends AppCompatActivity {
                     takingSpinnerValueRes3Rings(spinner2);
                     takingSpinnerValueRes3Rings_1(spinner3);
                     takingSpinnerValueRes3Rings_3(spinner4);
-                    takingSpinnerValueRes4Rings_1(spinner5);
+                    takingSpinnerValueRes3Rings_2(spinner5);
                     takingSpinnerValueRes5Rings(spinner6);
                     takingSpinnerValueRes6Rings(spinner7);
                 }
