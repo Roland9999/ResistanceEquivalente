@@ -29,11 +29,6 @@ public class ChooseComplexType extends AppCompatActivity {
                 Intent intent2  = new Intent(this, ChooseNbr.class);
                 this.startActivity(intent2);
                 break;
-            case R.id.mixte_type_button:
-                setCircuitType(3);
-                Intent intent3  = new Intent(this, ChooseNbr.class);
-                this.startActivity(intent3);
-                break;
         }
         //Intent intent  = new Intent(this, ChooseNbr.class);
         //this.startActivity(intent);
