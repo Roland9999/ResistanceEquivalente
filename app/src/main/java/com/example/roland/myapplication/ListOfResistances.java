@@ -102,7 +102,6 @@ public class ListOfResistances extends AppCompatActivity {
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-
     /**
      * Calling Home
      */

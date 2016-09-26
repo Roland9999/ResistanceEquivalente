@@ -37,6 +37,22 @@ public class ChooseNbr extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        editText = (EditText) findViewById(R.id.enter_number);
+        if (editText != null) {
+            setNbRes(Integer.parseInt(editText.getText().toString().intern()));
+            outState.putInt("myRingsNbr", getNbRes());
+        }
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        editText = (EditText) findViewById(R.id.enter_number);
+        editText.setText(String.valueOf(savedInstanceState.getInt("myRingsNbr")));
+    }
 
     /**
      * Calling Home

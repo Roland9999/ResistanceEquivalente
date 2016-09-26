@@ -9,48 +9,65 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ChooseComplexType">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="600dip"
+        android:layout_centerInParent="true"
+        android:background="@drawable/image2"
+        android:orientation="vertical"
+        android:alpha="0.3"
+        >
+    </LinearLayout>
+
     <TextView
         android:id="@+id/text_view_choose_type"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select a circuit type:" />
+        android:text="Select a circuit type:"
+        android:textColor="@color/Black"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
 
     <Button
         android:id="@+id/serial_type_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="140dp"
         android:text="SERIAL CIRCUIT"
-        android:layout_marginTop="58dp"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginTop="180dp"
         android:layout_centerHorizontal="true"
-        android:onClick="callChooseNbr"/>
+        android:onClick="callChooseNbr"
+        android:background="@drawable/my_button_bd"
+        />
 
     <Button
         android:id="@+id/parallel_type_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="140dp"
         android:text="PARALLEL CIRCUIT"
-        android:layout_marginTop="58dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
         android:layout_below="@+id/serial_type_button"
         android:layout_centerHorizontal="true"
-        android:onClick="callChooseNbr"/>
-
-    <Button
-        android:id="@+id/mixte_type_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MIXED CIRCUIT"
-        android:layout_marginTop="68dp"
-        android:layout_below="@+id/parallel_type_button"
-        android:layout_centerHorizontal="true"
+        android:onClick="callChooseNbr"
+        android:background="@drawable/my_button_bd"
         />
 
     <Button
         android:id="@+id/home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
         android:text="HOME"
+        android:textSize="25sp"
+        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="callHome"/>
+        android:onClick="callHome"
+        android:background="@drawable/my_button"
+        />
 
 </RelativeLayout>

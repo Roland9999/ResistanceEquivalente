@@ -27,6 +27,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:onClick="modifyBtn"
+        android:background="@drawable/my_button"
+        android:textStyle="bold"
         />
 
 
@@ -39,7 +41,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
         android:layout_alignParentEnd="true"
-        android:onClick="callResultPage"/>
+        android:onClick="callResultPage"
+        android:background="@drawable/my_button"
+        android:textStyle="bold"
+        />
 
 
     <Button
@@ -47,8 +52,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="HOME"
+        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="callHome"/>
+        android:onClick="callHome"
+        android:background="@drawable/my_button"
+        />
 
 </RelativeLayout>
