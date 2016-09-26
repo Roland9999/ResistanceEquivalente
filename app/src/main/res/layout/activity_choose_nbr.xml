@@ -21,6 +21,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:layout_centerHorizontal="true"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textColor="@color/Black"
         android:text="Enter the number of resistances :" />
 
 
@@ -39,13 +42,17 @@
 
     <Button
         android:id="@+id/validation_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:text="VALIDATE"
+        android:textStyle="bold"
         android:layout_marginTop="150dp"
         android:layout_below="@+id/number_resistances_text"
         android:layout_centerHorizontal="true"
-        android:onClick="validationNbRes"/>
+        android:onClick="validationNbRes"
+        android:clickable="true"
+        android:enabled="true"
+        android:background="@drawable/colorchange"/>
 
     <Button
         android:id="@+id/home"

@@ -8,10 +8,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="horizontal"
-    android:background="@color/Yellow"
+    android:background="@color/White"
     tools:context="com.example.roland.myapplication.MainActivity"
     >
-
 
     <TextView
         android:id="@+id/main_text_view"
@@ -19,30 +18,37 @@
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:textColor="@color/Black"
         android:text="Evaluate the value of a :" />
 
     <Button
         android:id="@+id/res_val"
         android:layout_width="260dp"
         android:layout_height="100dp"
-        android:background="@color/colorPrimary"
         android:text="RESISTANCE"
         android:textSize="25sp"
-        android:textColor="@color/White"
         android:onClick="callAddAResistance"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:clickable="true"
+        android:textStyle="bold"
+        android:enabled="true"
+        android:background="@drawable/colorchange"
+        />
     <Button
         android:id="@+id/complex_circuit"
         android:layout_width="260dp"
         android:layout_height="100dp"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/White"
         android:text="COMPLEX CIRCUIT"
         android:textSize="25sp"
+        android:textStyle="bold"
         android:onClick="callChooseComplexType"
         android:layout_alignTop="@+id/res_val"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        android:enabled="true"
+        android:background="@drawable/colorchange"
+        />
 
 
 </RelativeLayout>

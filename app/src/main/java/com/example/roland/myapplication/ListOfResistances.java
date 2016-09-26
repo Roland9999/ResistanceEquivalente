@@ -45,45 +45,45 @@ public class ListOfResistances extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 nbRings((Spinner) parent);
                 int nb = Resistance.getNbAnneaux();
+                Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+                Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
+                Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
+                Spinner spinner5 = (Spinner) findViewById(R.id.spinner5);
+                Spinner spinner6 = (Spinner) findViewById(R.id.spinner6);
+                Spinner spinner7 = (Spinner) findViewById(R.id.spinner7);
                 if (nb == 3) { //for resitance with 3 rings
-                    Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+                    spinner5.setVisibility(View.GONE);
+                    spinner6.setVisibility(View.GONE);
+                    spinner7.setVisibility(View.GONE);
                     takingSpinnerValueRes3Rings(spinner2);
-                    Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
                     takingSpinnerValueRes3Rings_1(spinner3);
-                    Spinner spinner4 = (Spinner) findViewById(R.id.spinner4); //multiplier
                     takingSpinnerValueRes3Rings_2(spinner4);
                 } else if (nb == 4) { //for resitance with 4 rings
-                    Spinner spinner22 = (Spinner) findViewById(R.id.spinner2);
-                    takingSpinnerValueRes3Rings(spinner22);
-                    Spinner spinner33 = (Spinner) findViewById(R.id.spinner3);
-                    takingSpinnerValueRes3Rings_1(spinner33);
-                    Spinner spinner44 = (Spinner) findViewById(R.id.spinner4); //multiplier
-                    takingSpinnerValueRes3Rings_2(spinner44);
-                    Spinner spinner5 = (Spinner) findViewById(R.id.spinner5); //tolerance
+                    spinner5.setVisibility(View.VISIBLE);
+                    spinner6.setVisibility(View.GONE);
+                    spinner7.setVisibility(View.GONE);
+                    takingSpinnerValueRes3Rings(spinner2);
+                    takingSpinnerValueRes3Rings_1(spinner3);
+                    takingSpinnerValueRes3Rings_2(spinner4);
                     takingSpinnerValueRes4Rings_0(spinner5);
                 } else if (nb == 5) { //for resitance with 5 rings
-                    Spinner spinner222 = (Spinner) findViewById(R.id.spinner2);
-                    takingSpinnerValueRes3Rings(spinner222);
-                    Spinner spinner333 = (Spinner) findViewById(R.id.spinner3);
-                    takingSpinnerValueRes3Rings_1(spinner333);
-                    Spinner spinner444 = (Spinner) findViewById(R.id.spinner4);
-                    takingSpinnerValueRes3Rings_3(spinner444);
-                    Spinner spinner55 = (Spinner) findViewById(R.id.spinner5); //multiplier
-                    takingSpinnerValueRes4Rings_1(spinner55);
-                    Spinner spinner6 = (Spinner) findViewById(R.id.spinner6); //tolerance
+                    spinner5.setVisibility(View.VISIBLE);
+                    spinner6.setVisibility(View.VISIBLE);
+                    spinner7.setVisibility(View.GONE);
+                    takingSpinnerValueRes3Rings(spinner2);
+                    takingSpinnerValueRes3Rings_1(spinner3);
+                    takingSpinnerValueRes3Rings_3(spinner4);
+                    takingSpinnerValueRes4Rings_1(spinner5);
                     takingSpinnerValueRes5Rings(spinner6);
                 } else if (nb == 6) { //for resitance with 6 rings
-                    Spinner spinner2222 = (Spinner) findViewById(R.id.spinner2);
-                    takingSpinnerValueRes3Rings(spinner2222);
-                    Spinner spinner3333 = (Spinner) findViewById(R.id.spinner3);
-                    takingSpinnerValueRes3Rings_1(spinner3333);
-                    Spinner spinner4444 = (Spinner) findViewById(R.id.spinner4);
-                    takingSpinnerValueRes3Rings_3(spinner4444);
-                    Spinner spinner555 = (Spinner) findViewById(R.id.spinner5); //multiplier
-                    takingSpinnerValueRes4Rings_1(spinner555);
-                    Spinner spinner66 = (Spinner) findViewById(R.id.spinner6); //tolerance
-                    takingSpinnerValueRes5Rings(spinner66);
-                    Spinner spinner7 = (Spinner) findViewById(R.id.spinner7);
+                    spinner5.setVisibility(View.VISIBLE);
+                    spinner6.setVisibility(View.VISIBLE);
+                    spinner7.setVisibility(View.VISIBLE);
+                    takingSpinnerValueRes3Rings(spinner2);
+                    takingSpinnerValueRes3Rings_1(spinner3);
+                    takingSpinnerValueRes3Rings_3(spinner4);
+                    takingSpinnerValueRes4Rings_1(spinner5);
+                    takingSpinnerValueRes5Rings(spinner6);
                     takingSpinnerValueRes6Rings(spinner7);
                 }
             }
@@ -113,15 +113,23 @@ public class ListOfResistances extends AppCompatActivity {
      * Calling next activity to fill resistances values
      */
     public void nextResValue(View view) {
-        myList = new ResitancesValuesList(String.valueOf(value));
-        int nbResist = getIntent().getExtras().getInt("remainingLoops");
-        nbResist--;
-        if (nbResist > 0) {
-            Intent i = new Intent(this, ListOfResistances.class);
-            i.putExtra("remainingLoops", nbResist);
-            this.startActivity(i);
+
+        if (value == 0.0) {
+            TextView total = (TextView) findViewById(R.id.error_view);
+            total.setText("WARNING! Value cannot be 0.0");
         } else {
-            this.startActivity(new Intent(this, Resume.class));
+            myList = new ResitancesValuesList(String.valueOf(value));
+            int nbResist = getIntent().getExtras().getInt("remainingLoops");
+            nbResist--;
+            if (nbResist > 0) {
+                Intent i = new Intent(this, ListOfResistances.class);
+                i.putExtra("remainingLoops", nbResist);
+                this.startActivity(i);
+            } else {
+                Intent ir = new Intent(this, Resume.class);
+                ir.putExtra("remainingLoops", nbResist);
+                this.startActivity(ir);
+            }
         }
     }
 
@@ -221,7 +229,7 @@ public class ListOfResistances extends AppCompatActivity {
                 TextView total = (TextView) findViewById(R.id.total);
                 total.setText(String.valueOf(value));
 
-                TextView tolerance = (TextView)findViewById(R.id.tolerance);
+                TextView tolerance = (TextView) findViewById(R.id.tolerance);
                 tolerance.setText(" 20 % ");
             }
 
@@ -261,8 +269,8 @@ public class ListOfResistances extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal4(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
-                TextView tolerance = (TextView)findViewById(R.id.tolerance);
-                tolerance.setText( String.valueOf(Resistance.getVal4())+" % ");
+                TextView tolerance = (TextView) findViewById(R.id.tolerance);
+                tolerance.setText(String.valueOf(Resistance.getVal4()) + " % ");
             }
 
             @Override
@@ -304,8 +312,8 @@ public class ListOfResistances extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal5(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
-                TextView tolerance = (TextView)findViewById(R.id.tolerance);
-                tolerance.setText( String.valueOf(Resistance.getVal5())+" % ");
+                TextView tolerance = (TextView) findViewById(R.id.tolerance);
+                tolerance.setText(String.valueOf(Resistance.getVal5()) + " % ");
             }
 
             @Override

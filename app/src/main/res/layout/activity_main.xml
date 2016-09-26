@@ -7,9 +7,19 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/Yellow"
     tools:context="com.example.roland.myapplication.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#86D8A4"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="410dip"
+        android:layout_centerInParent="true"
+        android:background="@drawable/logohome"
+        android:orientation="vertical"
+        >
+    </LinearLayout>
 
     <TextView
         android:id="@+id/main_text_view"
@@ -17,32 +27,35 @@
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:textColor="@color/Black"
         android:text="Evaluate the value of a :" />
 
     <Button
         android:id="@+id/res_val"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="100dp"
         android:text="RESISTANCE"
         android:textSize="25sp"
-        android:textColor="@color/White"
+        android:textColor="@color/Black"
+        android:alpha="0.7"
         android:onClick="callAddAResistance"
-        android:background="@color/colorPrimary"
+        android:background="@color/VertBouton"
         android:layout_below="@+id/main_text_view"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="81dp" />
+        android:layout_marginTop="81dp"
+        android:layout_centerHorizontal="true"/>
     <Button
         android:id="@+id/complex_circuit"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="100dp"
-        android:textColor="@color/White"
         android:text="COMPLEX CIRCUIT"
         android:textSize="25sp"
+        android:alpha="0.7"
+        android:textColor="@color/Black"
         android:onClick="callChooseComplexType"
-        android:background="@color/colorPrimary"
+        android:background="@color/VertBouton"
         android:layout_marginTop="78dp"
         android:layout_below="@+id/res_val"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

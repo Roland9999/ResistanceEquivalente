@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:textColor="@color/Black"
         android:text="Select a circuit type:" />
 
     <Button
@@ -35,7 +36,7 @@
         android:text="SERIAL CIRCUIT"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:alpha="0.5"
+        android:alpha="0.7"
         android:layout_marginTop="55dp"
         android:onClick="callChooseNbr"
         android:layout_below="@+id/text_view_choose_type"
@@ -51,6 +52,7 @@
         android:text="PARALLEL CIRCUIT"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:alpha="0.7"
         android:layout_marginTop="58dp"
         android:layout_below="@+id/serial_type_button"
         android:layout_centerHorizontal="true"
