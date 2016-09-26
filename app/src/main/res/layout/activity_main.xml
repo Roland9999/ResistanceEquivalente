@@ -9,7 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.roland.myapplication.MainActivity"
     android:orientation="vertical"
-    android:background="#86D8A4"
     >
 
     <LinearLayout
@@ -18,17 +17,20 @@
         android:layout_centerInParent="true"
         android:background="@drawable/logohome"
         android:orientation="vertical"
+        android:alpha="0.2"
         >
     </LinearLayout>
 
     <TextView
         android:id="@+id/main_text_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:textAlignment="center"
         android:textColor="@color/Black"
-        android:text="Evaluate the value of a :" />
+        android:text="Evaluate the value of a :"
+        />
 
     <Button
         android:id="@+id/res_val"
@@ -38,11 +40,13 @@
         android:textSize="25sp"
         android:textColor="@color/Black"
         android:alpha="0.7"
+        android:textStyle="bold"
         android:onClick="callAddAResistance"
-        android:background="@color/VertBouton"
+        android:background="@drawable/my_button_bd"
         android:layout_below="@+id/main_text_view"
-        android:layout_marginTop="81dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        />
     <Button
         android:id="@+id/complex_circuit"
         android:layout_width="300dp"
@@ -50,12 +54,14 @@
         android:text="COMPLEX CIRCUIT"
         android:textSize="25sp"
         android:alpha="0.7"
+        android:textStyle="bold"
         android:textColor="@color/Black"
         android:onClick="callChooseComplexType"
-        android:background="@color/VertBouton"
-        android:layout_marginTop="78dp"
+        android:background="@drawable/my_button_bd"
+        android:layout_marginTop="80dp"
         android:layout_below="@+id/res_val"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        />
 
 
 </RelativeLayout>

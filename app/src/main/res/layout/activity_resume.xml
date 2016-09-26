@@ -28,7 +28,8 @@
         android:onClick="modifyBtn"
         android:clickable="true"
         android:enabled="true"
-        android:background="@drawable/colorchange"
+        android:textStyle="bold"
+        android:background="@drawable/my_button"
         />
 
 
@@ -44,7 +45,8 @@
         android:onClick="callResultPage"
         android:clickable="true"
         android:enabled="true"
-        android:background="@drawable/colorchange"
+        android:textStyle="bold"
+        android:background="@drawable/my_button"
         />
 
 
@@ -53,8 +55,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="HOME"
+        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="callHome"/>
+        android:onClick="callHome"
+        android:background="@drawable/my_button"
+        />
 
 </RelativeLayout>
