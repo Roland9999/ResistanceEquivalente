@@ -231,7 +231,8 @@ public class AddAResistance extends AppCompatActivity {
                 Resistance.setVal5(20.0);
                 TextView tolerance = (TextView)findViewById(R.id.tolerance);
                 if (tolerance != null) {
-                    tolerance.setText(String.valueOf(Resistance.getVal5()) + " % ");
+                    String tol = Resistance.getVal5() + getString(R.string.toleranceValue);
+                    tolerance.setText(tol);
                 }
             }
 
@@ -264,7 +265,10 @@ public class AddAResistance extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
                 Resistance.setVal5(20.0);
                 TextView tolerance = (TextView)findViewById(R.id.tolerance);
-                tolerance.setText(String.valueOf(Resistance.getVal5())+" % ");
+                if (tolerance != null) {
+                    String tol = Resistance.getVal5() + getString(R.string.toleranceValue);
+                    tolerance.setText(tol);
+                }
             }
         });
     }

@@ -175,23 +175,6 @@ public class AlgorithmToSort {
                 list.set(i, tmp);
             }
         }
-        k++;
-        for (int i = 0 ; i<list.size() ;i++ ) {
-            tmp = list.get(k);
-            if (list.get(i).equals("#606060")) {//Gray">#606060
-                list.set(k, list.get(i));
-                list.set(i, tmp);
-            }
-        }
-        k++;
-        for (int i = 0 ; i<list.size() ;i++ ) {
-            tmp = list.get(k);
-            if (list.get(i).equals("#FFFFFF")) {//White">#FFFFFF
-                list.set(k, list.get(i));
-                list.set(i, tmp);
-            }
-        }
-
     }
 
     public static void sortListColorsRing5(List<String> list) {

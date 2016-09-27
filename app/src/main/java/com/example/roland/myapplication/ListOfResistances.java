@@ -338,7 +338,10 @@ public class ListOfResistances extends AppCompatActivity {
 
                 Resistance.setVal5(20.0);
                 TextView tolerance = (TextView)findViewById(R.id.tolerance);
-                tolerance.setText( String.valueOf(Resistance.getVal5())+" % ");
+                if (tolerance != null) {
+                    String tol = Resistance.getVal5() + getString(R.string.toleranceValue);
+                    tolerance.setText(tol);
+                }
             }
 
             @Override
