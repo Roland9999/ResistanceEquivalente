@@ -149,6 +149,17 @@
         />
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/temp_coeff"
+        android:background="@color/Gray"
+        android:textSize="25sp"
+        android:text="Temp. Coeff. : "
+        android:layout_below="@+id/total"
+        android:textColor="@color/White"
+        />
+
+    <TextView
         android:layout_width="80dp"
         android:layout_height="40dp"
         android:id="@+id/signe"

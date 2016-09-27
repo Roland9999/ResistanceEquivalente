@@ -22,69 +22,94 @@ public class AddAResistance extends AppCompatActivity {
                 R.array.nb, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-        //calling abstract class
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                nbRings((Spinner) parent);
-                int nb = Resistance.getNbAnneaux();
-                Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
-                Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
-                Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
-                Spinner spinner5 = (Spinner) findViewById(R.id.spinner5);
-                Spinner spinner6 = (Spinner) findViewById(R.id.spinner6);
-                Spinner spinner7 = (Spinner) findViewById(R.id.spinner7);
-                switch (nb) {
-                    case 3: //for resistance with 3 rings
-                        spinner5.setVisibility(View.GONE);
-                        spinner6.setVisibility(View.GONE);
-                        spinner7.setVisibility(View.GONE);
-                        takingSpinnerValueRes3Rings(spinner2);
-                        takingSpinnerValueRes3Rings_1(spinner3);
-                        takingSpinnerValueRes4Rings(spinner4);
-                        break;
-                    case 4: //for resistance with 4 rings
-                        spinner5.setVisibility(View.VISIBLE);
-                        spinner6.setVisibility(View.GONE);
-                        spinner7.setVisibility(View.GONE);
-                        takingSpinnerValueRes3Rings(spinner2);
-                        takingSpinnerValueRes3Rings_1(spinner3);
-                        takingSpinnerValueRes4Rings(spinner4);
-                        takingSpinnerValueRes5Rings(spinner5);
-                        break;
-                    case 5: //for resistance with 5 rings
-                        spinner5.setVisibility(View.VISIBLE);
-                        spinner6.setVisibility(View.VISIBLE);
-                        spinner7.setVisibility(View.GONE);
-                        takingSpinnerValueRes3Rings(spinner2);
-                        takingSpinnerValueRes3Rings_1(spinner3);
-                        takingSpinnerValueRes3Rings_3(spinner4);
-                        takingSpinnerValueRes4Rings(spinner5);
-                        takingSpinnerValueRes5Rings(spinner6);
-                        break;
-                    case 6: //for resistance with 6 rings
-                        spinner5.setVisibility(View.VISIBLE);
-                        spinner6.setVisibility(View.VISIBLE);
-                        spinner7.setVisibility(View.VISIBLE);
-                        takingSpinnerValueRes3Rings(spinner2);
-                        takingSpinnerValueRes3Rings_1(spinner3);
-                        takingSpinnerValueRes3Rings_3(spinner4);
-                        takingSpinnerValueRes4Rings(spinner5);
-                        takingSpinnerValueRes5Rings(spinner6);
-                        takingSpinnerValueRes6Rings(spinner7);
-                        break;
-                }
-            }
+        if (spinner != null) {
+            // Apply the adapter to the spinner
+            spinner.setAdapter(adapter);
+            //calling abstract class
+            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    nbRings((Spinner) parent);
+                    int nb = Resistance.getNbAnneaux();
+                    Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+                    Spinner spinner3 = (Spinner) findViewById(R.id.spinner3);
+                    Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
+                    Spinner spinner5 = (Spinner) findViewById(R.id.spinner5);
+                    Spinner spinner6 = (Spinner) findViewById(R.id.spinner6);
+                    Spinner spinner7 = (Spinner) findViewById(R.id.spinner7);
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Resistance.setNbAnneaux(3);
-            }
-        });
+                    switch (nb) {
+                        case 3: //for resistance with 3 rings
+                            settingVisibilityOfElements(nb);
+                            takingSpinnerValueRes3Rings(spinner2);
+                            takingSpinnerValueRes3Rings_1(spinner3);
+                            takingSpinnerValueRes4Rings(spinner4);
+                            break;
+                        case 4: //for resistance with 4 rings
+                            settingVisibilityOfElements(nb);
+                            takingSpinnerValueRes3Rings(spinner2);
+                            takingSpinnerValueRes3Rings_1(spinner3);
+                            takingSpinnerValueRes4Rings(spinner4);
+                            takingSpinnerValueRes5Rings(spinner5);
+                            break;
+                        case 5: //for resistance with 5 rings
+                            settingVisibilityOfElements(nb);
+                            takingSpinnerValueRes3Rings(spinner2);
+                            takingSpinnerValueRes3Rings_1(spinner3);
+                            takingSpinnerValueRes3Rings_3(spinner4);
+                            takingSpinnerValueRes4Rings(spinner5);
+                            takingSpinnerValueRes5Rings(spinner6);
+                            break;
+                        case 6: //for resistance with 6 rings
+                            settingVisibilityOfElements(nb);
+                            takingSpinnerValueRes3Rings(spinner2);
+                            takingSpinnerValueRes3Rings_1(spinner3);
+                            takingSpinnerValueRes3Rings_3(spinner4);
+                            takingSpinnerValueRes4Rings(spinner5);
+                            takingSpinnerValueRes5Rings(spinner6);
+                            takingSpinnerValueRes6Rings(spinner7);
+                            break;
+                    }
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                    Resistance.setNbAnneaux(3);
+                }
+            });
+        }
 
         nbRings(spinner);
+    }
+
+    public void settingVisibilityOfElements(int a) {
+        Spinner spinner5 = (Spinner) findViewById(R.id.spinner5);
+        Spinner spinner6 = (Spinner) findViewById(R.id.spinner6);
+        Spinner spinner7 = (Spinner) findViewById(R.id.spinner7);
+        TextView temp_coeff = (TextView) findViewById(R.id.temp_coeff);
+        if (spinner5 != null && spinner6 != null && spinner7 != null && temp_coeff != null) {
+            if (a == 3) {
+                spinner5.setVisibility(View.GONE);
+                spinner6.setVisibility(View.GONE);
+                spinner7.setVisibility(View.GONE);
+                temp_coeff.setVisibility(View.GONE);
+            } else if (a == 4) {
+                spinner5.setVisibility(View.VISIBLE);
+                spinner6.setVisibility(View.GONE);
+                spinner7.setVisibility(View.GONE);
+                temp_coeff.setVisibility(View.GONE);
+            } else if (a == 5) {
+                spinner5.setVisibility(View.VISIBLE);
+                spinner6.setVisibility(View.VISIBLE);
+                spinner7.setVisibility(View.GONE);
+                temp_coeff.setVisibility(View.GONE);
+            } else if (a == 6) {
+                spinner5.setVisibility(View.VISIBLE);
+                spinner6.setVisibility(View.VISIBLE);
+                spinner7.setVisibility(View.VISIBLE);
+                temp_coeff.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     /**
@@ -107,8 +132,8 @@ public class AddAResistance extends AppCompatActivity {
     public void nbRings(Spinner spinner) {
         int spinner_pos = spinner.getSelectedItemPosition();
         String[] ringsNb = getResources().getStringArray(R.array.nb);
-        int nbAnneaux = Integer.valueOf(ringsNb[spinner_pos]);
-        Resistance.setNbAnneaux(nbAnneaux);
+        int ringsNbr = Integer.valueOf(ringsNb[spinner_pos]);
+        Resistance.setNbAnneaux(ringsNbr);
     }
 
     /**evaluating value of a resistance with 6 rings*/
@@ -130,13 +155,13 @@ public class AddAResistance extends AppCompatActivity {
     /**
      *
      */
-    public void takingSpinnerValueRes3Rings(Spinner spinner){
+    public void takingSpinnerValueRes3Rings(Spinner spinner) {
         CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
@@ -149,13 +174,13 @@ public class AddAResistance extends AppCompatActivity {
         });
     }
 
-    public void takingSpinnerValueRes3Rings_1(Spinner spinner){
+    public void takingSpinnerValueRes3Rings_1(Spinner spinner) {
         CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal2((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
@@ -174,7 +199,7 @@ public class AddAResistance extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal3((double) ColorsValue.getColorsValue().get(parent.getSelectedItem().toString()));
@@ -193,17 +218,21 @@ public class AddAResistance extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal4((double) ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
                 double value = evaluationResValAllRings();
                 TextView total = (TextView)findViewById(R.id.total);
-                total.setText(String.valueOf(value));
+                if (total != null) {
+                    total.setText(String.valueOf(value));
+                }
 
                 Resistance.setVal5(20.0);
                 TextView tolerance = (TextView)findViewById(R.id.tolerance);
-                tolerance.setText( String.valueOf(Resistance.getVal5())+" % ");
+                if (tolerance != null) {
+                    tolerance.setText(String.valueOf(Resistance.getVal5()) + " % ");
+                }
             }
 
             @Override
@@ -213,45 +242,54 @@ public class AddAResistance extends AppCompatActivity {
         });
     }
 
-    public void takingSpinnerValueRes5Rings(Spinner spinner){
+    public void takingSpinnerValueRes5Rings(Spinner spinner) {
         CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsToleranceValues.ringsToleranceColors());
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal5((double) ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
+                Resistance.setVal5(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
 
-                TextView tolerance = (TextView)findViewById(R.id.tolerance);
-                tolerance.setText(String.valueOf(Resistance.getVal5())+" % ");
+                TextView tolerance = (TextView) findViewById(R.id.tolerance);
+                if (tolerance != null) {
+                    String tol = Resistance.getVal5() + getString(R.string.toleranceValue);
+                    tolerance.setText(tol);
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 Resistance.setVal5(20.0);
                 TextView tolerance = (TextView)findViewById(R.id.tolerance);
-                tolerance.setText( String.valueOf(Resistance.getVal5())+" % ");
+                tolerance.setText(String.valueOf(Resistance.getVal5())+" % ");
             }
         });
     }
 
-    public void takingSpinnerValueRes6Rings(Spinner spinner){
+    public void takingSpinnerValueRes6Rings(Spinner spinner) {
         CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsTemperatureCoefficientValues.ringsTemperatureCoefficientColors());
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal6((double) ColorsTemperatureCoefficientValues.getTemperatureCoefficientColorsValue().get(parent.getSelectedItem().toString()));
+                Resistance.setVal6(ColorsTemperatureCoefficientValues.getTemperatureCoefficientColorsValue().get(parent.getSelectedItem().toString()));
+
+                TextView temp_coeff = (TextView) findViewById(R.id.temp_coeff);
+                String temp_coefficient = "Temp. Coeff. : " + String.valueOf(Resistance.getVal6()) + " ppm";
+                if (temp_coeff != null) {
+                    temp_coeff.setText(temp_coefficient);
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Resistance.setVal(0.0);
+                Resistance.setVal6(0.0);
             }
         });
     }

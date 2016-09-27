@@ -11,21 +11,20 @@ import java.util.Set;
  */
 public class ColorsMultiplierValues {
 
-    public static Map<String, Integer> getMultiplierColorsValue(){
-        Map<String, Integer> colorsValues;
+    public static Map<String, Double> getMultiplierColorsValue() {
+        Map<String, Double> colorsValues;
         colorsValues = new HashMap<>();
-        colorsValues.put("#000000", 0);
-        colorsValues.put("#582900", 1);
-        colorsValues.put("#FF0000", 2);
-        colorsValues.put("#ED7F10", 3);
-        colorsValues.put("#FFFF00", 4);
-        colorsValues.put("#096A09", 5);
-        colorsValues.put("#0000FF", 6);
-        colorsValues.put("#660099", 7);
-        colorsValues.put("#606060", 8);
-        colorsValues.put("#FFFFFF", 9);
-        colorsValues.put("#FFD700", -1);
-        colorsValues.put("#CECECE", -2);
+        colorsValues.put("#000000", 0.0);
+        colorsValues.put("#582900", 1.0);
+        colorsValues.put("#FF0000", 2.0);
+        colorsValues.put("#ED7F10", 3.0);
+        colorsValues.put("#FFFF00", 4.0);
+        colorsValues.put("#096A09", 5.0);
+        colorsValues.put("#0000FF", 6.0);
+        colorsValues.put("#660099", 7.0);
+        //colorsValues.put("#606060", 8.0);
+        colorsValues.put("#FFD700", -1.0);
+        colorsValues.put("#CECECE", -2.0);
 
         return colorsValues;
     }
@@ -44,7 +43,7 @@ public class ColorsMultiplierValues {
     <item name="Silver">#CECECE</item>
 */
 
-    public static List<String> ringsMultiplierColors(){
+    public static List<String> ringsMultiplierColors() {
         //List<String> myColors = new ArrayList<>();
         Set myColors = getMultiplierColorsValue().keySet(); //retourne la liste des clés du Map
         List listOfMyColors = new ArrayList( myColors ); //conversion du Set en List
