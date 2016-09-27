@@ -204,7 +204,7 @@ public class ListOfResistances extends AppCompatActivity {
      *
      */
     public void takingSpinnerValueRes3Rings(Spinner spinner) {
-        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
+        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, ColorsValue.ringsColors());
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -223,7 +223,7 @@ public class ListOfResistances extends AppCompatActivity {
     }
 
     public void takingSpinnerValueRes3Rings_1(Spinner spinner) {
-        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
+        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, ColorsValue.ringsColors());
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -242,7 +242,7 @@ public class ListOfResistances extends AppCompatActivity {
     }
 
     public void takingSpinnerValueRes3Rings_3(Spinner spinner) {
-        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
+        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, ColorsValue.ringsColors());
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -261,7 +261,7 @@ public class ListOfResistances extends AppCompatActivity {
     }
 
     public void takingSpinnerValueRes4Rings(Spinner spinner) {
-        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsMultiplierValues.ringsMultiplierColors());
+        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, ColorsMultiplierValues.ringsMultiplierColors());
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -292,7 +292,7 @@ public class ListOfResistances extends AppCompatActivity {
     }
 
     public void takingSpinnerValueRes5Rings(Spinner spinner) {
-        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsToleranceValues.ringsToleranceColors());
+        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, ColorsToleranceValues.ringsToleranceColors());
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -322,7 +322,7 @@ public class ListOfResistances extends AppCompatActivity {
     }
 
     public void takingSpinnerValueRes6Rings(Spinner spinner) {
-        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsTemperatureCoefficientValues.ringsTemperatureCoefficientColors());
+        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this, ColorsTemperatureCoefficientValues.ringsTemperatureCoefficientColors());
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
