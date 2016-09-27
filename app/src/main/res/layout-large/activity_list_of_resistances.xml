@@ -7,26 +7,30 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.roland.myapplication.ListOfResistances">
+    tools:context="com.example.roland.myapplication.ListOfResistances"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="700dip"
         android:layout_centerInParent="true"
-        android:alpha="0.3"
         android:background="@drawable/image7"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical"
+        android:alpha="0.3"
+        >
+    </LinearLayout>
 
     <TextView
         android:id="@+id/main_text_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Enter a resistance's characteristics :"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
         android:textAlignment="center"
         android:textColor="@color/Black"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:text="Enter a resistance's characteristics :"
+        />
 
     <TextView
         android:id="@+id/nomber_rings_text"
@@ -34,17 +38,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/main_text_view"
         android:layout_marginTop="110dp"
-        android:text="Number of rings :"
-        android:textColor="@color/Black"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:text="Number of rings :"
+        />
 
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="80dp"
         android:layout_height="60dp"
+        android:layout_marginTop="160dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="160dp" />
+        />
 
     <TextView
         android:id="@+id/colors_rings_text"
@@ -52,58 +58,59 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/nomber_rings_text"
         android:layout_marginTop="60dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
         android:text="Select color of any ring :"
         android:textColor="@color/Black"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-
+        />
     <Spinner
         android:id="@+id/spinner2"
         android:layout_width="90dp"
         android:layout_height="50dp"
-        android:layout_alignParentStart="true"
         android:layout_below="@id/colors_rings_text"
-        android:layout_marginTop="50dp" />
-
+        android:layout_marginTop="50dp"
+        android:layout_alignParentStart="true"
+        />
     <Spinner
         android:id="@+id/spinner3"
         android:layout_width="90dp"
         android:layout_height="50dp"
         android:layout_below="@id/colors_rings_text"
+        android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
-
+        />
     <Spinner
         android:id="@+id/spinner4"
         android:layout_width="90dp"
         android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
         android:layout_below="@id/colors_rings_text"
-        android:layout_marginTop="50dp" />
-
+        android:layout_marginTop="50dp"
+        android:layout_alignParentEnd="true"
+        />
     <Spinner
         android:id="@+id/spinner5"
         android:layout_width="90dp"
         android:layout_height="50dp"
-        android:layout_alignParentStart="true"
         android:layout_below="@id/spinner2"
-        android:layout_marginTop="50dp" />
-
+        android:layout_marginTop="50dp"
+        android:layout_alignParentStart="true"
+        />
     <Spinner
         android:id="@+id/spinner6"
         android:layout_width="90dp"
         android:layout_height="50dp"
         android:layout_below="@id/spinner2"
+        android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
-
+        />
     <Spinner
         android:id="@+id/spinner7"
         android:layout_width="90dp"
         android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
         android:layout_below="@id/spinner2"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="50dp"
+        android:layout_alignParentEnd="true"
+        />
 
     <TextView
         android:id="@+id/resultat_text"
@@ -111,87 +118,95 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/spinner5"
         android:layout_marginTop="60dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:text="The value of the resistance is : "
         android:textColor="@color/Black"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        />
 
     <TextView
-        android:id="@+id/total"
         android:layout_width="220dp"
         android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/resultat_text"
-        android:layout_marginTop="40dp"
+        android:id="@+id/total"
         android:background="@color/Gray"
+        android:layout_marginTop="40dp"
+        android:textSize="25sp"
+        android:layout_below="@+id/resultat_text"
+        android:layout_alignParentStart="true"
         android:textColor="@color/White"
-        android:textSize="25sp" />
+        android:layout_toStartOf="@+id/signe"
+        />
 
     <TextView
-        android:id="@+id/unity"
         android:layout_width="80dp"
         android:layout_height="40dp"
-        android:layout_alignEnd="@+id/spinner1"
-        android:layout_alignTop="@+id/total"
+        android:id="@+id/unity"
         android:background="@color/Gray"
+        android:textSize="25sp"
         android:text=" Ohms"
         android:textColor="@color/White"
-        android:textSize="25sp" />
+        android:layout_alignTop="@+id/total"
+        android:layout_alignEnd="@+id/spinner1"
+        />
 
     <TextView
-        android:id="@+id/signe"
         android:layout_width="60dp"
         android:layout_height="40dp"
-        android:layout_alignEnd="@+id/resultat_text"
-        android:layout_alignTop="@+id/tolerance"
+        android:id="@+id/signe"
         android:background="@color/Gray"
+        android:textSize="25sp"
         android:text="  +/- "
         android:textColor="@color/White"
-        android:textSize="25sp" />
+        android:layout_alignTop="@+id/tolerance"
+        android:layout_toStartOf="@+id/tolerance"
+        />
 
     <TextView
-        android:id="@+id/tolerance"
         android:layout_width="100dp"
         android:layout_height="40dp"
+        android:id="@+id/tolerance"
+        android:background="@color/Gray"
+        android:textSize="25sp"
         android:layout_alignTop="@+id/unity"
         android:layout_toStartOf="@+id/spinner1"
-        android:background="@color/Gray"
-        android:textSize="25sp" />
-
+        />
     <TextView
-        android:id="@+id/error_view"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_alignTop="@+id/next_value"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-70dp"
+        android:id="@+id/error_view"
         android:background="@color/White"
+        android:textSize="20sp"
         android:textAlignment="center"
         android:textColor="@color/Red"
-        android:textSize="20sp" />
+        android:layout_marginTop="-70dp"
+        android:layout_alignTop="@+id/next_value"
+        android:layout_centerHorizontal="true"
+        />
 
     <Button
         android:id="@+id/next_value"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:text="NEXT"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/my_button"
         android:onClick="nextResValue"
-        android:text="NEXT"
+        android:background="@drawable/my_button"
+        android:textStyle="bold"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        />
 
     <Button
         android:id="@+id/home"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:text="HOME"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/my_button"
         android:onClick="callHome"
-        android:text="HOME"
+        android:background="@drawable/my_button"
+        android:textStyle="bold"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        />
 
 </RelativeLayout>
