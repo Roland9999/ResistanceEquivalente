@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public class ColorsMultiplierValues {
 
-    public static Map<String, Double> getMultiplierColorsValue(){
+    public static Map<String, Double> getMultiplierColorsValue() {
         Map<String, Double> colorsValues;
         colorsValues = new HashMap<>();
         colorsValues.put("#000000", 0.0);
@@ -43,10 +43,10 @@ public class ColorsMultiplierValues {
     <item name="Silver">#CECECE</item>
 */
 
-    public static List<String> ringsMultiplierColors(){
+    public static List<String> ringsMultiplierColors() {
         //List<String> myColors = new ArrayList<>();
         Set myColors = getMultiplierColorsValue().keySet(); //retourne la liste des clés du Map
-        List listOfMyColors = new ArrayList( myColors ); //conversion du Set en List
+        List listOfMyColors = new ArrayList(myColors); //conversion du Set en List
         return listOfMyColors;
     }
 

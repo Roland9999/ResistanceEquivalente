@@ -15,28 +15,30 @@ public class ChooseComplexType extends AppCompatActivity {
         setContentView(R.layout.activity_choose_complex_type);
     }
 
-    /**Calling activity ChooseNbr */
-    public void callChooseNbr(View view){
+    /**
+     * Calling activity ChooseNbr
+     */
+    public void callChooseNbr(View view) {
 
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.serial_type_button:
                 setCircuitType(1);
-                Intent intent  = new Intent(this, ChooseNbr.class);
+                Intent intent = new Intent(this, ChooseNbr.class);
                 this.startActivity(intent);
                 break;
             case R.id.parallel_type_button:
                 setCircuitType(2);
-                Intent intent2  = new Intent(this, ChooseNbr.class);
+                Intent intent2 = new Intent(this, ChooseNbr.class);
                 this.startActivity(intent2);
                 break;
         }
-        //Intent intent  = new Intent(this, ChooseNbr.class);
-        //this.startActivity(intent);
     }
 
 
-    /**Calling Home */
-    public void callHome(View view){
+    /**
+     * Calling Home
+     */
+    public void callHome(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
     }
