@@ -14,7 +14,7 @@ public class ResitancesValuesList {
 
     private static List<String> valuesList = new ArrayList<>();
 
-    public ResitancesValuesList(String resValue){
+    public ResitancesValuesList(String resValue) {
         valuesList.add(resValue);
     }
 

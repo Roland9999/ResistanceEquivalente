@@ -181,20 +181,22 @@ public class ListOfResistances extends AppCompatActivity {
         Resistance.setNbAnneaux(nbAnneaux);
     }
 
-    /**evaluating value of a resistance with 6 rings*/
-    public double evaluationResValRings(){
+    /**
+     * evaluating value of a resistance with 6 rings
+     */
+    public double evaluationResValRings() {
         Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
         return computeValue(R.getNbAnneaux(), R.getTabDouble());
     }
 
-    public double computeValue(int nbAnneaux, double[] tabDouble){
+    public double computeValue(int nbAnneaux, double[] tabDouble) {
         int soustracteur = 2;
         if (nbAnneaux == 4) soustracteur = 3;
         if (nbAnneaux == 5) soustracteur = 3;
         if (nbAnneaux == 6) soustracteur = 4;
-        double tot = ((tabDouble[0]*Math.pow(10.0,(nbAnneaux-soustracteur)))+
-                (tabDouble[1]*Math.pow(10.0,(nbAnneaux-(soustracteur + 1))))+
-                (tabDouble[2]*Math.pow(10.0,(nbAnneaux-(soustracteur + 2)))))*Math.pow(10.0,tabDouble[3]);
+        double tot = ((tabDouble[0] * Math.pow(10.0, (nbAnneaux - soustracteur))) +
+                (tabDouble[1] * Math.pow(10.0, (nbAnneaux - (soustracteur + 1)))) +
+                (tabDouble[2] * Math.pow(10.0, (nbAnneaux - (soustracteur + 2))))) * Math.pow(10.0, tabDouble[3]);
         return tot;
     }
 
@@ -269,13 +271,13 @@ public class ListOfResistances extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal4(ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
                 value = evaluationResValRings();
-                TextView total = (TextView)findViewById(R.id.total);
+                TextView total = (TextView) findViewById(R.id.total);
                 if (total != null) {
                     total.setText(String.valueOf(new BigDecimal(value).setScale(7, RoundingMode.UP)));
                 }
 
                 Resistance.setVal5(20.0);
-                TextView tolerance = (TextView)findViewById(R.id.tolerance);
+                TextView tolerance = (TextView) findViewById(R.id.tolerance);
                 if (tolerance != null) {
                     String tol = Resistance.getVal5() + getString(R.string.toleranceValue);
                     tolerance.setText(tol);
@@ -300,7 +302,7 @@ public class ListOfResistances extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Resistance.setVal5(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
 
-                TextView tolerance = (TextView)findViewById(R.id.tolerance);
+                TextView tolerance = (TextView) findViewById(R.id.tolerance);
                 if (tolerance != null) {
                     String tol = Resistance.getVal5() + getString(R.string.toleranceValue);
                     tolerance.setText(tol);
@@ -310,7 +312,7 @@ public class ListOfResistances extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 Resistance.setVal5(20.0);
-                TextView tolerance = (TextView)findViewById(R.id.tolerance);
+                TextView tolerance = (TextView) findViewById(R.id.tolerance);
                 if (tolerance != null) {
                     String tol = Resistance.getVal5() + getString(R.string.toleranceValue);
                     tolerance.setText(tol);

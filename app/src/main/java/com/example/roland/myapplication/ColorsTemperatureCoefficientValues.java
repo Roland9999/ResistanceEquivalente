@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public class ColorsTemperatureCoefficientValues {
 
-    public static Map<String, Double> getTemperatureCoefficientColorsValue(){
+    public static Map<String, Double> getTemperatureCoefficientColorsValue() {
         Map<String, Double> colorsValues;
         colorsValues = new HashMap<>();
         colorsValues.put("#582900", 100.0); //brown
@@ -25,9 +25,9 @@ public class ColorsTemperatureCoefficientValues {
         return colorsValues;
     }
 
-    public static List<String> ringsTemperatureCoefficientColors(){
+    public static List<String> ringsTemperatureCoefficientColors() {
         Set myColors = getTemperatureCoefficientColorsValue().keySet(); //retourne la liste des clés du Map
-        List listOfMyColors = new ArrayList( myColors ); //conversion du Set en List
+        List<String> listOfMyColors = new ArrayList(myColors); //conversion du Set en List
         AlgorithmToSort.sortListColorsRing6(listOfMyColors); //utilisation de l'algorithme de trie
         return listOfMyColors;
     }

@@ -10,19 +10,13 @@ import android.widget.SpinnerAdapter;
 
 import java.util.List;
 
-public class CostomSpinnerAdapter extends ArrayAdapter<String> implements SpinnerAdapter {
-/*
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_costom_spinner_adapter);
-    }
-*/
+public class CustomSpinnerAdapter extends ArrayAdapter<String> implements SpinnerAdapter {
+
     Context context;
 
     private final List<String> myColors; // Notre liste de couleurs
 
-    public CostomSpinnerAdapter(Context context, List<String> objects) {
+    public CustomSpinnerAdapter(Context context, List<String> objects) {
         super(context, R.layout.activity_costom_spinner_adapter, objects);
         this.context = context;
         this.myColors = objects;

@@ -15,15 +15,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    /**Calling activity AddAResistance */
-    public void callAddAResistance(View view){
-        Intent intent  = new Intent(this, AddAResistance.class);
+    /**
+     * Calling activity AddAResistance
+     */
+    public void callAddAResistance(View view) {
+        Intent intent = new Intent(this, AddAResistance.class);
         this.startActivity(intent);
     }
 
-    /**Calling activity ChooseComplexType */
-    public void callChooseComplexType(View view){
-        Intent intent  = new Intent(this, ChooseComplexType.class);
+    /**
+     * Calling activity ChooseComplexType
+     */
+    public void callChooseComplexType(View view) {
+        Intent intent = new Intent(this, ChooseComplexType.class);
         this.startActivity(intent);
     }
 
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         // Checks the orientation of the screen
         if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             Toast.makeText(this, "landscape", Toast.LENGTH_SHORT).show();
-        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
             Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
         }
     }

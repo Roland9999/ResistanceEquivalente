@@ -13,7 +13,7 @@ import java.util.Set;
 public class ColorsValue {
 
 
-    public static Map<String, Integer> getColorsValue(){ //Correspond au anneaux pour les chiffres des centaines, dizaines et unités.
+    public static Map<String, Integer> getColorsValue() { //Correspond au anneaux pour les chiffres des centaines, dizaines et unités.
         Map<String, Integer> colorsValues;
         colorsValues = new HashMap<>();
         colorsValues.put("#000000", 0); //black
@@ -30,25 +30,10 @@ public class ColorsValue {
 
         return colorsValues;
     }
-/*
-    <item name="Black">#000000</item>
-    <item name="Brown">#582900</item>
-    <item name="Red">#FF0000</item>
-    <item name="Orange">#ED7F10</item>
-    <item name="Yellow">#FFFF00</item>
-    <item name="Green">#096A09</item>
-    <item name="Blue">#0000FF</item>
-    <item name="Violet">#660099</item>
-    <item name="Gray">#606060</item>
-    <item name="White">#FFFFFF</item>
-    <item name="Gold">#FFD700</item>
-    <item name="Silver">#CECECE</item>
-*/
 
-    public static List<String> ringsColors(){
-        //List<String> myColors = new ArrayList<>();
+    public static List<String> ringsColors() {
         Set myColors = getColorsValue().keySet(); //retourne la liste des clés du Map
-        List listOfMyColors = new ArrayList( myColors ); //conversion du Set en List
+        List<String> listOfMyColors = new ArrayList(myColors); //conversion du Set en List
         AlgorithmToSort.sortListColorsRing123(listOfMyColors); //utilisation de l'algorithme de trie
         return listOfMyColors;
     }

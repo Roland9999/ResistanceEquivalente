@@ -29,12 +29,12 @@ public class Result extends AppCompatActivity {
         int circuitType = ChooseComplexType.getCircuitType();
 
         if (circuitType == 1) {
-            for (int i = 0; i < valuesList.size(); i++){
+            for (int i = 0; i < valuesList.size(); i++) {
                 result += Double.valueOf(valuesList.get(i));
             }
             final_result.setText(String.valueOf(result));
-        } else if (circuitType == 2){
-            for (int i = 0; i < valuesList.size(); i++){
+        } else if (circuitType == 2) {
+            for (int i = 0; i < valuesList.size(); i++) {
                 res += 1.0 / Double.valueOf(valuesList.get(i));
             }
             result = 1.0 / res;
@@ -42,7 +42,7 @@ public class Result extends AppCompatActivity {
         }
     }
 
-    public void callHome(View view){
+    public void callHome(View view) {
         ResitancesValuesList.setValuesList(new ArrayList<String>()); //mise à jour de la liste de valeurs des résistances
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);

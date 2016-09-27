@@ -30,7 +30,7 @@ public class ColorsMultiplierValues {
 
     public static List<String> ringsMultiplierColors() {
         Set myColors = getMultiplierColorsValue().keySet(); //retourne la liste des clés du Map
-        List listOfMyColors = new ArrayList( myColors ); //conversion du Set en List
+        List listOfMyColors = new ArrayList(myColors); //conversion du Set en List
         AlgorithmToSort.sortListColorsRing4(listOfMyColors); // utilisation de l'algorithme de trie
         return listOfMyColors;
     }

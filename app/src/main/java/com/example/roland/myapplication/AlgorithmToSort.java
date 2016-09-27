@@ -5,6 +5,7 @@ import java.util.List;
 /**
  * Created by Raph513 on 08/08/16.
  */
+
 public class AlgorithmToSort {
 
     public static void sortListColorsRing123(List<String> list) {
