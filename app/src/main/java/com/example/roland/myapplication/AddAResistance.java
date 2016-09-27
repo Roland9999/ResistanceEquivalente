@@ -9,6 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class AddAResistance extends AppCompatActivity {
 
     @Override
@@ -221,11 +224,11 @@ public class AddAResistance extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal4((double) ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
+                Resistance.setVal4(ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
                 double value = evaluationResValAllRings();
                 TextView total = (TextView)findViewById(R.id.total);
                 if (total != null) {
-                    total.setText(String.valueOf(value));
+                    total.setText(String.valueOf(new BigDecimal(value).setScale(7, RoundingMode.UP)));
                 }
 
                 Resistance.setVal5(20.0);

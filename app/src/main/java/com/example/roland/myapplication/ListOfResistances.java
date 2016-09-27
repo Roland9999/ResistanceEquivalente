@@ -14,6 +14,8 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class ListOfResistances extends AppCompatActivity {
@@ -179,24 +181,6 @@ public class ListOfResistances extends AppCompatActivity {
         Resistance.setNbAnneaux(nbAnneaux);
     }
 
-    /**evaluating value of a resistance with 3 rings*/
-   /* public double evaluationResVal3Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal4());
-        return computeValue(R.getNbAnneaux(), R.getTabDouble());
-    }*/
-
-    /**evaluating value of a resistance with 4 rings*/
-    /*public double evaluationResVal4Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal4());
-        return computeValue(R.getNbAnneaux(), R.getTabDouble());
-    }*/
-
-    /**evaluating value of a resistance with 5 rings*/
-    /*public double evaluationResVal5Rings(){
-        Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
-        return computeValue(R.getNbAnneaux(), R.getTabDouble());
-    }*/
-
     /**evaluating value of a resistance with 6 rings*/
     public double evaluationResValRings(){
         Resistance R = new Resistance(Resistance.getVal(), Resistance.getVal2(), Resistance.getVal3(), Resistance.getVal4());
@@ -255,31 +239,6 @@ public class ListOfResistances extends AppCompatActivity {
         });
     }
 
-    /*public void takingSpinnerValueRes3Rings_2(Spinner spinner) {
-        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsMultiplierValues.ringsMultiplierColors());
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal3(ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
-                value = evaluationResVal3Rings();
-                TextView total = (TextView) findViewById(R.id.total);
-                total.setText(String.valueOf(value));
-
-                TextView tolerance = (TextView) findViewById(R.id.tolerance);
-                tolerance.setText(" 20 % ");
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Resistance.setVal3(0.0);
-            }
-        });
-    }
-*/
     public void takingSpinnerValueRes3Rings_3(Spinner spinner) {
         CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsValue.ringsColors());
         // Specify the layout to use when the list of choices appears
@@ -299,27 +258,6 @@ public class ListOfResistances extends AppCompatActivity {
         });
     }
 
-   /* public void takingSpinnerValueRes4Rings_0(Spinner spinner) {
-        CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsToleranceValues.ringsToleranceColors());
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal4(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
-                TextView tolerance = (TextView) findViewById(R.id.tolerance);
-                tolerance.setText(String.valueOf(Resistance.getVal4()) + " % ");
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Resistance.setVal4(0.0);
-            }
-        });
-    }
-*/
     public void takingSpinnerValueRes4Rings(Spinner spinner) {
         CostomSpinnerAdapter adapter = new CostomSpinnerAdapter(this, ColorsMultiplierValues.ringsMultiplierColors());
         // Specify the layout to use when the list of choices appears
@@ -329,11 +267,11 @@ public class ListOfResistances extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal4((double) ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
+                Resistance.setVal4(ColorsMultiplierValues.getMultiplierColorsValue().get(parent.getSelectedItem().toString()));
                 value = evaluationResValRings();
                 TextView total = (TextView)findViewById(R.id.total);
                 if (total != null) {
-                    total.setText(String.valueOf(value));
+                    total.setText(String.valueOf(new BigDecimal(value).setScale(7, RoundingMode.UP)));
                 }
 
                 Resistance.setVal5(20.0);
@@ -360,7 +298,7 @@ public class ListOfResistances extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Resistance.setVal5((double) ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
+                Resistance.setVal5(ColorsToleranceValues.getToleranceColorsValue().get(parent.getSelectedItem().toString()));
 
                 TextView tolerance = (TextView)findViewById(R.id.tolerance);
                 if (tolerance != null) {

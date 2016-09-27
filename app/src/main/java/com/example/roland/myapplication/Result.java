@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +38,7 @@ public class Result extends AppCompatActivity {
                 res += 1.0 / Double.valueOf(valuesList.get(i));
             }
             result = 1.0 / res;
-            final_result.setText(String.valueOf(result));
+            final_result.setText(String.valueOf(new BigDecimal(result).setScale(5, RoundingMode.UP)));
         }
     }
 
