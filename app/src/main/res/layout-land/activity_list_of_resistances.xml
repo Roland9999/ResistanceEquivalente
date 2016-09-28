@@ -167,17 +167,6 @@
         android:layout_alignTop="@+id/unity"
         android:layout_toStartOf="@+id/unity"
         />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:id="@+id/error_view"
-        android:background="@color/White"
-        android:textSize="15sp"
-        android:textAlignment="center"
-        android:textColor="@color/Red"
-        android:layout_marginTop="-30dp"
-        android:layout_alignTop="@+id/next_value"
-        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/next_value"
