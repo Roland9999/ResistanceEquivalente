@@ -230,7 +230,7 @@ public class AddAResistance extends AppCompatActivity {
                 double value = evaluationResValAllRings();
                 TextView total = (TextView) findViewById(R.id.total);
                 if (total != null) {
-                    total.setText(String.valueOf(new BigDecimal(value).setScale(7, RoundingMode.UP)));
+                    total.setText(String.valueOf(new BigDecimal(value).setScale(3, RoundingMode.UP)));
                 }
 
                 Resistance.setVal5(20.0);

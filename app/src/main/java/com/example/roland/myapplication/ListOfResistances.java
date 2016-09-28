@@ -1,12 +1,16 @@
 package com.example.roland.myapplication;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -120,10 +124,32 @@ public class ListOfResistances extends AppCompatActivity {
     public void nextResValue(View view) {
 
         if (value == 0.0) {
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+            final EditText et = new EditText(this);
+            //TextView total = (TextView) findViewById(R.id.error_view);
+            TextView total = new TextView(this);
+            total.setText(getString(R.string.warning));
+            total.setTextColor(Color.RED);
+            total.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            total.setTextSize(30);
+            // set prompts.xml to alertdialog builder
+            alertDialogBuilder.setView(total);
+            // set dialog message
+            alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                }
+            });
+            // create alert dialog
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            // show it
+            alertDialog.show();
+/*
             TextView total = (TextView) findViewById(R.id.error_view);
             if (total != null) {
                 total.setText(getString(R.string.warning));
             }
+            */
         } else {
             myList = new ResitancesValuesList(String.valueOf(value));
             int nbResist = getIntent().getExtras().getInt("remainingLoops");
@@ -273,7 +299,7 @@ public class ListOfResistances extends AppCompatActivity {
                 value = evaluationResValRings();
                 TextView total = (TextView) findViewById(R.id.total);
                 if (total != null) {
-                    total.setText(String.valueOf(new BigDecimal(value).setScale(7, RoundingMode.UP)));
+                    total.setText(String.valueOf(new BigDecimal(value).setScale(3, RoundingMode.UP)));
                 }
 
                 Resistance.setVal5(20.0);
