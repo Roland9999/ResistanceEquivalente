@@ -213,14 +213,13 @@ public class ListOfResistances extends AppCompatActivity {
     }
 
     public double computeValue(int nbAnneaux, double[] tabDouble) {
-        int soustracteur = 2;
-        if (nbAnneaux == 4) soustracteur = 3;
-        if (nbAnneaux == 5) soustracteur = 3;
-        if (nbAnneaux == 6) soustracteur = 4;
-        double tot = ((tabDouble[0] * Math.pow(10.0, (nbAnneaux - soustracteur))) +
-                (tabDouble[1] * Math.pow(10.0, (nbAnneaux - (soustracteur + 1)))) +
-                (tabDouble[2] * Math.pow(10.0, (nbAnneaux - (soustracteur + 2))))) * Math.pow(10.0, tabDouble[3]);
-        return tot;
+        int soustractor = 2;
+        if (nbAnneaux == 4) soustractor = 3;
+        if (nbAnneaux == 5) soustractor = 3;
+        if (nbAnneaux == 6) soustractor = 4;
+        return ((tabDouble[0] * Math.pow(10.0, (nbAnneaux - soustractor))) +
+                (tabDouble[1] * Math.pow(10.0, (nbAnneaux - (soustractor + 1)))) +
+                (tabDouble[2] * Math.pow(10.0, (nbAnneaux - (soustractor + 2))))) * Math.pow(10.0, tabDouble[3]);
     }
 
     /**
