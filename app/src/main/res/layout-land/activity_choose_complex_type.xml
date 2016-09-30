@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="horizontal"
+    tools:context=".ChooseComplexType"
+    >
+
+    <TextView
+        android:id="@+id/text_view_choose_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/Black"
+        android:text="Select a circuit type:"
+        />
+
+    <Button
+        android:id="@+id/serial_type_button"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="SERIAL CIRCUIT"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:onClick="callChooseNbr"
+        android:layout_alignTop="@+id/parallel_type_button"
+        android:layout_toStartOf="@+id/home"
+        android:clickable="true"
+        android:enabled="true"
+        android:background="@drawable/my_button_bd"
+        />
+
+    <Button
+        android:id="@+id/parallel_type_button"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="PARALLEL CIRCUIT"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:onClick="callChooseNbr"
+        android:layout_marginStart="45dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/serial_type_button"
+        android:clickable="true"
+        android:enabled="true"
+        android:background="@drawable/my_button_bd"
+        />
+
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOME"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="callHome"
+        android:background="@drawable/my_button"
+        />
+
+</RelativeLayout>

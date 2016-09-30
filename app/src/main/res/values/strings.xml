@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="warning">WARNING! The value of a resistance cannot be equal to 0.0</string>
+    <string name="toleranceByDefault"> 20 % </string>
+    <string name="toleranceValue"> % </string>
+    <string name="titleAddRes">Enter a resistance\'s characteristics :</string>
+    <string name="ringsNbr">Number of rings :</string>
+    <string name="ringColor">Select color of any ring :</string>
+    <string name="givingResultText">The value of the resistance is : </string>
+    <string name="resUnity">Ohms</string>
+    <string name="nextButtonText">NEXT</string>
+    <string name="homeButtonText">HOME</string>
+    <string name="plusMinusText">+/-</string>
+</resources>
