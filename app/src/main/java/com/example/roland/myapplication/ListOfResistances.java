@@ -118,23 +118,30 @@ public class ListOfResistances extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+<<<<<<< HEAD
     //MaterialDialog warningMaterialDialog;
+=======
+>>>>>>> origin/Roland
     /**
      * Calling next activity to fill resistances values
      */
     public void nextResValue(View view) {
-        if (value == 0.0) {
 
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            final EditText et = new EditText(this);
-            //TextView warning = (TextView) findViewById(R.id.warning_pop_up);
+        if (value == 0.0) {
+            int DIALOG_THEME_STYLE = android.support.v7.appcompat.R.style.Base_Theme_AppCompat_Dialog_MinWidth;
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this, DIALOG_THEME_STYLE);
             TextView total = new TextView(this);
             total.setText(getString(R.string.warning));
             total.setTextColor(Color.RED);
             total.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             total.setTextSize(30);
+            // set alertDialogBuilder Title
+            alertDialogBuilder.setTitle("WARNING !")
+                    .setIcon(android.R.drawable.ic_dialog_alert);
+
             // set prompts.xml to alertdialog builder
             alertDialogBuilder.setView(total);
+            alertDialogBuilder.setInverseBackgroundForced(true);
             // set dialog message
             alertDialogBuilder.setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
@@ -144,22 +151,6 @@ public class ListOfResistances extends AppCompatActivity {
             AlertDialog alertDialog = alertDialogBuilder.create();
             // show it
             alertDialog.show();
-/*
-            TextView total = (TextView) findViewById(R.id.error_view);
-            if (total != null) {
-                /*warningMaterialDialog = new MaterialDialog(this)
-                        .setTitle(R.string.warning)
-                        .setPositiveButton("OK", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                warningMaterialDialog.dismiss();
-                            }
-                        });
-                warningMaterialDialog.setBackgroundResource(R.drawable.my_pop_up);
-                warningMaterialDialog.show();
-                //total.setText(getString(R.string.warning));
-            }*/
-
         } else {
             myList = new ResitancesValuesList(String.valueOf(value));
             int nbResist = getIntent().getExtras().getInt("remainingLoops");
@@ -226,14 +217,13 @@ public class ListOfResistances extends AppCompatActivity {
     }
 
     public double computeValue(int nbAnneaux, double[] tabDouble) {
-        int soustracteur = 2;
-        if (nbAnneaux == 4) soustracteur = 3;
-        if (nbAnneaux == 5) soustracteur = 3;
-        if (nbAnneaux == 6) soustracteur = 4;
-        double tot = ((tabDouble[0] * Math.pow(10.0, (nbAnneaux - soustracteur))) +
-                (tabDouble[1] * Math.pow(10.0, (nbAnneaux - (soustracteur + 1)))) +
-                (tabDouble[2] * Math.pow(10.0, (nbAnneaux - (soustracteur + 2))))) * Math.pow(10.0, tabDouble[3]);
-        return tot;
+        int soustractor = 2;
+        if (nbAnneaux == 4) soustractor = 3;
+        if (nbAnneaux == 5) soustractor = 3;
+        if (nbAnneaux == 6) soustractor = 4;
+        return ((tabDouble[0] * Math.pow(10.0, (nbAnneaux - soustractor))) +
+                (tabDouble[1] * Math.pow(10.0, (nbAnneaux - (soustractor + 1)))) +
+                (tabDouble[2] * Math.pow(10.0, (nbAnneaux - (soustractor + 2))))) * Math.pow(10.0, tabDouble[3]);
     }
 
     /**
