@@ -118,10 +118,6 @@ public class ListOfResistances extends AppCompatActivity {
         this.startActivity(intent);
     }
 
-<<<<<<< HEAD
-    //MaterialDialog warningMaterialDialog;
-=======
->>>>>>> origin/Roland
     /**
      * Calling next activity to fill resistances values
      */
